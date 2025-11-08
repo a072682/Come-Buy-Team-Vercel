@@ -1,0 +1,130 @@
+// 元件最外框
+.main3{
+    width: 100%;
+    min-height: calc(100vh - 69px);
+    background-color: #000000;
+    background-attachment:scroll;
+    background-image: 
+        url("/assets/images/Bg/main3/main3-bg-top.png"), 
+        url("/assets/images/Bg/main3/main3-bg-bottom.png");
+    background-position:
+        top left,
+        bottom right;
+    background-repeat:
+        repeat-x,
+        no-repeat;
+    @media (max-width: 992px){
+        background-image:url("/assets/images/Bg/main3/main3-bg-top.png");
+        background-repeat:repeat-x;
+        background-position:top;
+    }
+    // 元件外框
+    .main3Content{
+        width: 100%;
+        padding: 144px 0;
+        min-height: calc(100vh - 69px);
+        @media (max-width: 992px){
+            padding: 64px 0;
+        }
+        // 標題外框
+        .main3Title{
+            margin-bottom: 48px;
+            // 標題
+            .main3TitleSet{
+                color: #ffffff;
+                font-size: 48px;
+                text-align: center;
+                @media (max-width: 992px){
+                    font-size: 32px;
+                }
+            }
+            // 標題
+        }
+        // 標題外框
+
+        // 卡片設定
+        .main3Card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 112px;
+            @media (max-width: 992px){ 
+                row-gap: 64px;
+            }
+            // 單一卡片設定
+            .main3CardItem{
+                
+                // 圖片外框
+                .main3ImgBox{
+                    display: block;
+                    margin: 0px auto;
+                    position: relative;
+                    max-width: 512px;
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    aspect-ratio: 456 / 350; 
+                    @media (max-width: 992px){
+                        max-width: 100%;
+                        width: 80%;
+                        height: auto;
+                    }
+                    // 圖片
+                    .main3ImgSet{
+                        width: 100%;
+                        height: auto;
+                        box-shadow: 0 0 10px #8B0018, 0 0 40px #8B0018;
+                        object-fit: cover;
+                        border-radius: 12px;
+                    }
+                    // 圖片
+                }
+                // 圖片外框
+
+                // 文字外框
+                .main3TextBox{
+                    // 文字
+                    .main3TextSet{
+                        color:#ffffff;
+                        font-weight:700;
+                        line-height: 1.2;
+                        font-size: 28px;
+                        @media (max-width: 992px){
+                            font-size: 20px;
+                        }
+                    }
+                    // 文字
+
+                    &::after{
+                        content: "";
+                        display:block;
+                        padding-top: 28px;
+                        border-bottom: 4px solid;
+                        border-image: linear-gradient(to right, #F1B1FF, #C10877) 1;
+                        @media (max-width: 992px){
+                            padding-top: 20px;
+                        }
+                    }
+                }
+                // 文字外框
+
+                // 連結按鈕
+                .mian3CheckBtnSet{
+                    margin-top: 24px;
+                    font-size: 24px;
+                    padding: 24px 88px;
+                    @media (max-width: 992px){
+                        padding: 12px 48px;
+                    }
+                }
+                // 連結按鈕
+            }
+            // 單一卡片設定
+        }
+        // 卡片設定
+    }
+    // 元件外框
+}
+// 元件最外框
+

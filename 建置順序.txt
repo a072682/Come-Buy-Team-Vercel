@@ -1,0 +1,649 @@
+建立Next.js專案
+
+	npx create-next-app@latest
+
+Would you like to use the recommended Next.js defaults?	
+「是否要使用官方預設的 Next.js 設定？」
+（包含 TypeScript、ESLint、Tailwind、App Router、Turbopack）
+No, reuse previous settings
+否，使用你上次建立 Next.js 專案時的設定
+No, customize settings
+否，我想要自己自訂設定
+如果你只是要快速建立能跑的 Next.js 專案
+選no
+
+Would you like to use TypeScript?
+要不要用 TypeScript。你先選 No（之後想用再加也很容易）。
+
+Which linter would you like to use? → ESLint
+程式碼規範檢查工具。選 ESLint 就好（唯一常見選項）。
+
+Would you like to use React Compiler?
+新的實驗優化編譯器（自動記憶化等）。為了穩定、少坑，先選 No。
+	
+Tailwind CSS? → No（之後再加也行）
+
+Would you like to use Turbopack? (recommended)
+要不要使用 Next.js 的新編譯器「Turbopack」？
+選 Yes Turbopack 是取代 Webpack 的新工具，速度更快、冷啟更快。
+
+Use src/ directory? → No
+要不要把所有程式碼放在一個 /src 資料夾裡？
+選 No → 檔案會直接在專案根目錄，例如 app/、components/。
+（這是新版官方推薦的結構，也比較直覺）
+
+Use App Router? → Yes（一定要，用新的 app/ 架構）
+要不要使用新版 Next.js 的「App Router」系統？
+選 Yes 這是 Next.js 13 之後的主架構，取代舊的 pages/ 版本。
+
+Import alias? → Yes（保持預設 @/*）
+
+接著載入scss
+	
+	npm i -D sass
+	
+並把自用的scss檔案放入資料夾結構中
+放入src資料夾下
+src/
+ ├─ app/
+ │   ├─ layout.js        ← 全站共用 Layout (取代 App.jsx/main.jsx)
+ │   └─ page.js          ← 首頁 (取代 index.html)
+ ├─ styles/
+ │  	├─ helpers/
+ │  	│   ├─ _variables-dark.css       
+ │  	│   └─ _variables.jsx          
+ │  	├─ Universal/               
+ │  	│   └─ _Universal.scss          
+ │  	└─ all.scss
+ 
+ 並在layout中補上引入
+ 
+	//scss區塊
+	import '../styles/all.scss'; 
+	//scss區塊
+	
+接著將all.scss內容修正為以下內容:
+	
+	@import "bootstrap/scss/functions";
+	@import "helpers/variables";
+	@import "bootstrap/scss/bootstrap";
+	@import "Universal/Universal";
+
+並在next.config.mjs檔案中新增以下內容
+內容:
+	
+	/** @type {import('next').NextConfig} */
+	const nextConfig = {
+	  sassOptions: { <== 內容新增
+		includePaths: ['node_modules'],   // ★ 關鍵：讓 @import 能解析套件內的相對引用
+	  },
+	};
+
+	export default nextConfig;
+	
+接著引入GOOGLE ICON
+在layout中引入
+	
+	export default function RootLayout({ children }) {
+	  return (
+		<html lang="en">
+		  <head> 
+			{/* Material Symbols（Outlined 範例） */}
+			<link <==引入icon相關檔案
+			  rel="stylesheet"
+			  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+			/>
+		  </head>
+		  <body>
+			{/* js載入 */}
+			<BootstrapClient />
+			{/* js載入 */}
+			<Providers>
+			  <Header />
+			  {children}
+			  <Footer />
+			</Providers>
+		  </body>
+		</html>
+	  );
+}
+	
+接著安裝bs5套件
+
+	npm i bootstrap@5.3.3
+	npm install react-bootstrap bootstrap
+	
+先將css在layout中引入
+	
+	import 'bootstrap/dist/css/bootstrap.min.css';//css檔案
+
+接著由於next結構無法直接引入js檔案
+因此要先在app資料夾下建立一個檔案bootstrap-client.js
+內容為
+
+	'use client';
+	//告訴 Next.js：「這個檔案只在前端執行」，不在 Server 端執行。
+
+	// 只要這行就會在瀏覽器端載入 Bootstrap 的 JS（含 Popper）
+	import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+	export default function BootstrapClient() {
+	  return null; // 這個元件不渲染任何畫面，只負責副作用載入
+	}
+
+之後再引入layout
+內容如下
+	
+	// js區塊
+	import BootstrapClient from './bootstrap-client';
+	// js區塊
+	
+	export default function RootLayout({ children }) {
+	  return (
+		<html lang="en">
+		  <body className={`${geistSans.variable} ${geistMono.variable}`}>
+			{/* js載入 */}
+			<BootstrapClient /> <== js載入
+			{/* js載入 */}
+			{children}
+		  </body>
+		</html>
+	  );
+	}
+
+接著建立元件在src資料夾下建立components資料夾並在之下在建立common資料夾
+建立基本的Header資料夾並在之下建立Header.jsx檔案
+內容為
+	
+	'use client';
+	export default function Header() {
+
+	  return (
+		<div>Header</div>
+	  );
+	}
+
+在引入layout
+內容如下:
+	
+	import Header from '@/components/common/Header/Header';
+	
+	export default function RootLayout({ children }) {
+	  return (
+		<html lang="zh-Hant">
+		  <head>
+			{/* Material Symbols（Outlined 範例） */}
+			<link
+			  rel="stylesheet"
+			  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+			/>
+		  </head>
+		  <body>
+			{/* js載入 */}
+			<BootstrapClient />
+			{/* js載入 */}
+			  <Header /> <= 元件載入
+			  {children}
+			  <ModalRoot />
+		  </body>
+		</html>
+	  );
+	}
+	
+接著安裝react-redux
+安裝套件
+
+	npm install @reduxjs/toolkit react-redux
+	
+先在src中建立store資料夾在建立一個store.js
+其內容如下
+
+	'use client';
+	import { configureStore } from '@reduxjs/toolkit';
+	
+
+
+	export const store = configureStore({
+	  reducer: {
+		
+	  },
+	});
+
+在store資料夾中建立slice資料夾
+先安裝axios套件
+	
+	npm i axios
+	
+可先建立loginSlice.js後續再依照需求做變更
+內容為
+	
+	
+
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
+
+
+//此區塊為測試開發用內容
+    // import axios from "axios";
+    // axios.defaults.withCredentials = true; 
+
+    // const BASE_URL = import.meta.env.VITE_BASE_URL;
+    // const API_PATH = import.meta.env.VITE_API_PATH;
+//此區塊為測試開發用內容
+
+export const loginSlice = createSlice({
+    name: "login",
+    initialState: {
+        linkState:false,//連線狀態
+    },
+    reducers: {
+        linkStateTrue: (state, action) => {
+            state.linkState = true;
+        },
+        linkStateFalse: (state, action) => {
+            state.linkState = false;
+        },
+    },
+  });
+
+  export const { linkStateTrue, linkStateFalse, } = loginSlice.actions;
+
+    //#region
+    //#endregion
+
+    //#region 測試連線
+        //測試連線
+        export const linkTest = createAsyncThunk(
+            "login/linkTest",
+            async (_,{ dispatch }) => {
+                dispatch(linkStateFalse()); 
+                try {
+                    const response = await axios.get(`/testApi`);
+                    console.log("連線成功",response.data);
+                    dispatch(linkStateTrue()); 
+                    return(response.data);
+                } catch (error) {
+                    console.log("連線失敗",error.response.data);
+                    dispatch(linkStateFalse());
+                    return(error.response.data);
+                }
+            }
+        );
+        //測試連線
+    //#endregion
+
+export default loginSlice.reducer;
+
+接著引入store.js
+內容如下
+	
+	'use client';
+
+	import { configureStore } from '@reduxjs/toolkit';
+	import loginReducer  from './slice/loginSlice'; <= 引入loginSlice後消除Slice字眼補上Reducer
+	//其他slice規則相同	
+	
+	export const store = configureStore({
+	  reducer: {
+		login:loginReducer,<=進行引入
+	  },
+	});
+
+接著建立providers外圍元件
+此元件的作用是讓所有元件都能取得slice的資料
+在src資料夾下建立providers資料夾之下在建立Providers.jsx檔案
+內容為
+
+	'use client'; // ⚠️ 一定要加這行，因為 Redux Provider 是 client component
+
+	import { store } from '@/store/store';
+	import { Provider } from 'react-redux';
+
+
+	export default function Providers({ children }) {
+	  return <Provider store={store}>{children}</Provider>;
+	}
+
+並在layout中引入
+內容:
+	
+	//scss區塊
+	import '../styles/all.scss'; 
+	import 'bootstrap/dist/css/bootstrap.min.css';//bs5css檔案
+
+	//scss區塊
+
+	// js區塊
+	import BootstrapClient from './bootstrap-client';
+	// js區塊
+
+	//元件區
+	import Header from '@/components/common/Header/Header';
+	import Footer from '@/components/common/Footer/Footer';
+	import Providers from '@/providers/roviders'; <= 元件引入
+	//元件區
+
+
+	export const metadata = {
+	  title: "Create Next App",
+	  description: "Generated by create next app",
+	};
+
+	export default function RootLayout({ children }) {
+	  return (
+		<html lang="en">
+		  <body className={`${geistSans.variable} ${geistMono.variable}`}>
+			{/* js載入 */}
+			<BootstrapClient />
+			{/* js載入 */}
+			<Providers> <==包覆所有元件
+			  <Header />
+			  {children}
+			  <Footer />
+			</Providers> <==包覆所有元件
+		  </body>
+		</html>
+	  );
+	}
+
+接著建立伺服器端
+先建立.env.local檔案(與src同級)
+內容為
+主要是連接資料庫的資訊
+	
+	DB_USER=postgres
+	DB_HOST=localhost
+	DB_DATABASE=comebuydatabase
+	DB_PASSWORD=aA128380593
+	DB_PORT=5432
+
+接著在src資料夾下建立lib資料夾並建立db.js檔案
+以及安裝pg套件
+	
+	npm install pg
+	
+內容為
+	
+	// lib/db.js
+	import { Pool } from 'pg';
+
+	let pool = globalThis.__pgPool;
+	//執行npm run dev以後 會創造出一個所謂的全域變數
+	//這個全域變數就是globalThis
+	//接著從globalThis裡面找__pgPool的內容放進pool 
+	//但是一開始執行的時候根本不會有__pgPool的內容
+	if (!pool) {
+	  pool = new Pool({
+		user: process.env.DB_USER,
+		host: process.env.DB_HOST,
+		database: process.env.DB_DATABASE,
+		password: process.env.DB_PASSWORD,
+		port: Number(process.env.DB_PORT) || 5432,
+	  });
+	  globalThis.__pgPool = pool;
+	}
+
+	export default pool;
+
+其內容是將.env.local資料取出至pool
+接著在app資料夾下建立對應的api名稱(像是testApi)
+接著
+
+目前取得面試資料
+需要搞懂
+演講稿
+搞懂next框架
+搞懂SSR（Server-Side Rendering）或 SEO 優化開發經驗
+
+建立api
+從新增會員(registerUser)開始
+先在app資料夾下建立api資料夾並在之下在建立registerUser資料夾在建立route.js
+接著先安裝套件
+bcrypt 其作用是負責把密碼進行加密
+
+	npm install bcrypt
+
+以及joi套件
+joi 其作用是負責建立規則來驗證輸入的資料
+
+	npm i joi
+	
+接著在registerUser下的route.js寫入內容
+內容如下
+
+	import { NextResponse } from 'next/server';   
+	// Next 提供的 API 工具包
+	import bcrypt from 'bcrypt';                   
+	// bcrypt負責把密碼進行加密
+	 import pool from '@/lib/db';           
+	// 與PostgreSQL資料庫的連線資料
+	import Joi from 'joi';                         
+	// Joi負責建立規則來驗證輸入的資料
+
+	//建立規則驗證創建會員時輸入的資料
+	const userSchema = Joi.object({                // 宣告一個 Joi 規則物件
+	  username: Joi.string().min(3).max(30).required(), // username 必須是字串、長度 3~30、必填
+	  email: Joi.string().email().required(),      // email 必須是符合 email 格式的字串、必填
+	  password: Joi.string().min(6).required(),    // password 必須是字串、至少 6 碼、必填
+	});                                            
+
+	// 這支 route 的 HTTP 方法是 POST（註冊通常用 POST）
+	// App Router 的寫法是「輸出一個同名函式（GET/POST/PUT...）」
+	export async function POST(req) {              // 宣告處理 POST 請求的函式，參數 req 是 Next 的 Request 物件
+	  try {                                        // 用 try/catch 包住，方便做錯誤處理
+
+		// 1) 解析請求本文（Body）
+		const { username, email, password } = await req.json();
+		// ↑ Next 的 Request 不是 Express 的 req.body，必須用 req.json() 解析出 JSON
+		// ↑ 解析後使用物件解構，把 username/email/password 取出來
+
+		// 2) 用 Joi 做資料驗證
+		const { error } = userSchema.validate({ username, email, password });
+		// ↑ 把剛解析出的資料丟進前面定義好的 schema 檢查
+		if (error) {                               // 如果不符合規則（例如格式有誤、缺欄位等）
+		  return NextResponse.json(                // 直接回覆 400 Bad Request
+			{ error: error.details[0].message },   // 把 Joi 給的第一條錯誤訊息回傳給前端
+			{ status: 400 }                        // 設定 HTTP 狀態碼為 400
+		  );
+		}
+
+		// 3) 設定預設欄位（和你原始設計一致）
+		const role = 'user';                       // 新註冊的使用者預設角色為 user
+		const provider = 'local';                  // 登入來源（auth_provider）預設標記為 local（本地帳密）
+
+		// 4) 檢查是否已註冊（同信箱或同帳號其中之一存在就不允許）
+		const existing = await pool.query(         // 用 SQL 查詢資料庫
+		  `SELECT id FROM users WHERE username = $1 OR email = $2`, // 用參數化查詢避免 SQL injection
+		  [username, email]                        // $1 對應 username，$2 對應 email
+		);
+		if (existing.rowCount !== 0) {             // 如果找得到任何一筆資料（rowCount > 0）
+		  return NextResponse.json(                // 回覆 400 告知已註冊
+			{ error: '此用戶已註冊' }, 
+			{ status: 400 }
+		  );
+		}
+
+		// 5) 對密碼進行雜湊（不可逆）
+		const hashedPassword = await bcrypt.hash(password, 10);
+		// ↑ 第二個參數 10 是 saltRounds（成本因子），數字越大雜湊越花時間也越難暴力破解
+		// ↑ 之後只會把 hashedPassword 寫進資料庫，絕不存明碼
+
+		// 6) 把使用者資料寫入資料庫
+		await pool.query(                          // 執行 INSERT 指令
+		  `
+			INSERT INTO users (username, email, password, role, auth_provider, created_at)
+			VALUES ($1, $2, $3, $4, $5, now())
+		  `,
+		  [username, email, hashedPassword, role, provider] // 對應上面的 $1~$5
+		);
+		// ↑ 這裡沒用 RETURNING，是因為你目前回前端只需要成功訊息；若要回傳新 id 可加上 RETURNING
+
+		// 7) 成功回應（201 Created）
+		return NextResponse.json(                  // 回傳 JSON
+		  { message: '會員註冊成功' },              // 內容：成功訊息
+		  { status: 201 }                          // 狀態碼 201 代表成功建立新資源
+		);
+
+	  } catch (err) {                              // 任何未預期的錯誤（例如資料庫連線失敗）
+		console.error('註冊失敗', err);            // 在伺服器端印出詳細錯誤方便調試
+		return NextResponse.json(                  // 回覆通用錯誤訊息給前端
+		  { error: '會員註冊失敗' },                // 不暴露內部細節，以免資訊洩漏
+		  { status: 500 }                          // 500 代表伺服器內部錯誤
+		);
+	  }
+	}
+	
+接著安裝jsonwebtoken
+jsonwebtoken 其作用是負責產生與驗證 JWT 的套件
+	
+	npm i jsonwebtoken
+
+並在.env.local檔案中新增內容
+內容如下
+	
+	JWT_SECRET=keya072682
+	
+接著在api資料夾之下建立login資料夾並建立route.js
+並寫入其內容，內容如下
+	
+	export const runtime = 'nodejs'; // 確保跑在 Node.js 環境（若你用原生 bcrypt 更重要）
+
+	import { NextResponse } from 'next/server';     // 用來產生 JSON 回應與設定 cookie
+	import jwt from 'jsonwebtoken';                 // 產生與驗證 JWT 的套件
+	import pool from '@/lib/db';                    // 你在 Step 2 建立的 PostgreSQL 連線池
+	// 如果你安裝的是 bcryptjs，請用下一行；若是原生 bcrypt，改成 'bcrypt'
+	import bcrypt from 'bcryptjs';                  // 比較密碼用（hash 驗證）
+
+	// 這支 route 處理「POST /api/login」
+	export async function POST(req) {               // POST 方法；req 是使用者送來的 Request
+	  try {
+		// 1) 解析請求本文（由前端 JSON 傳入 email 與 password）
+		const { email, password } = await req.json(); // Next.js 要用 req.json() 取代 Express 的 req.body
+		if (!email || !password) {                   // 簡單防呆：缺必要欄位就回 400
+		  return NextResponse.json(
+			{ error: 'email 與 password 為必填' },
+			{ status: 400 }
+		  );
+		}
+
+		// 2) 查使用者是否存在（用 email 查）
+		const result = await pool.query(             // 用參數化查詢避免 SQL injection
+		  'SELECT * FROM users WHERE email = $1',
+		  [email]
+		);
+
+		if (result.rows.length === 0) {              // 查無帳號
+		  return NextResponse.json(
+			{ error: '帳號或密碼錯誤' },              // 不要暴露「是帳號不存在」這種細節
+			{ status: 401 }
+		  );
+		}
+
+		// 3) 取出資料庫中的使用者
+		const user = result.rows[0];                 // e.g. { id, email, username, password(hash), role, auth_provider, ... }
+
+		// 4) 比對密碼（使用者輸入的明碼 vs 資料庫雜湊）
+		const isMatch = await bcrypt.compare(password, user.password);
+		if (!isMatch) {                              // 密碼不正確
+		  return NextResponse.json(
+			{ error: '帳號或密碼錯誤' },
+			{ status: 401 }
+		  );
+		}
+
+		// 5) 構造 JWT payload（之後 verifyCookie 就會讀這些欄位）
+		const payload = {
+		  userId: user.id,
+		  email: user.email,
+		  username: user.username,
+		  role: user.role,
+		  auth_provider: user.auth_provider,
+		  origIatMs: Date.now(),                     // 自行加入的簽發時間（毫秒），可用於安全策略
+		};
+
+		// 6) 使用 JWT_SECRET 簽出 token（設定存活時間 1 小時）
+		const token = jwt.sign(payload, process.env.JWT_SECRET, {
+		  expiresIn: '3600s',                        // 1 小時（你原本的寫法也可以）
+		});
+
+		// 7) 產生回應物件（先做 JSON，再補上 cookie）
+		const res = NextResponse.json({
+		  message: '登入成功',
+		  userData: {                                // 回前端的淺資料（不要回 hashed 密碼）
+			userId: user.id,
+			email: user.email,
+			username: user.username,
+			role: user.role,
+			auth_provider: user.auth_provider,
+		  },
+		});
+
+		// 8) 設定登入用的 cookie（名稱照你原本：user_token）
+		//    同站開發時，若不是 https，sameSite 建議用 'lax'、secure: false。
+		//    若你要跨網域（前端/後端不同網域）且 https，才用 sameSite:'none' + secure:true。
+		const isProd = process.env.NODE_ENV === 'production';
+		res.cookies.set('user_token', token, {
+		  httpOnly: true,                            // 前端 JS 拿不到，降低 XSS 風險
+		  secure: isProd,                            // 本地 http → false；正式 https → true
+		  sameSite: isProd ? 'none' : 'lax',         // 開發用 lax 較少踩雷；正式跨站才用 none
+		  path: '/',                                 // 全站可帶上 cookie
+		  maxAge: 60 * 60,                           // 1 小時（秒）
+		});
+
+		// 9) 回傳成功回應（帶好 cookie）
+		return res;
+
+	  } catch (err) {                                // 非預期錯誤（例如 DB 連不上）
+		console.error('登入錯誤:', err);
+		return NextResponse.json(
+		  { error: '伺服器錯誤' },
+		  { status: 500 }
+		);
+	  }
+	}
+	
+在建立了login跟registerUser以後需要再建立verifyCookie
+在lib資料夾下建立auth.js
+其內容為:
+
+	// src/lib/auth.js
+	// 目的：從 Cookie 取出 JWT → 驗證 → 回傳 payload（給後續 API 使用）
+
+	import jwt from 'jsonwebtoken';                 // 解析/驗證 JWT 的套件（你已安裝）
+
+	// 先讀出密鑰，沒有就立刻報錯，避免之後才踩雷
+	const { JWT_SECRET } = process.env;             // 從 .env.local 讀取
+	if (!JWT_SECRET) {
+	  throw new Error('Missing JWT_SECRET (check your .env.local)');
+	}
+
+	/**
+	 * verifyCookie(req)
+	 * - 只做三件事：
+	 *   1) 從 Cookie 取出名為 'user_token' 的 JWT
+	 *   2) 用 JWT_SECRET 驗證與解碼
+	 *   3) 回傳 payload（給呼叫端使用）
+	 * - 驗證失敗：丟出 Response(401) 讓呼叫端直接 return
+	 */
+	export async function verifyCookie(req) {
+	  // 1) 取 cookie（Next 的 Request 物件：req.cookies.get('名稱')?.value）
+	  const token = req.cookies.get('user_token')?.value;
+	  if (!token) {
+		// 沒帶 cookie 就回 401（未授權）
+		throw new Response('Unauthorized: no token', { status: 401 });
+	  }
+
+	  try {
+		// 2) 驗證與解碼 JWT（若過期/簽章錯誤會丟例外）
+		const payload = jwt.verify(token, JWT_SECRET);
+		// 3) 回傳 payload（例如 { userId, email, username, role, ... }）
+		return payload;
+	  } catch (err) {
+		// 無效或過期
+		throw new Response('Unauthorized: invalid token', { status: 401 });
+	  }
+	}
+
+
+
+	

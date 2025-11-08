@@ -1,0 +1,145 @@
+.modal{
+    width: 100%;
+    min-height: 100dvh;
+    position: fixed;   /* 覆蓋視窗 */
+    inset: 0;          /* top/right/bottom/left: 0 */
+    z-index: 2000;     /* 確保比 header 等都高；> 1055 即可 */
+    display: flex;     /* 用 flex 置中內容（不依賴 bootstrap 的 class） */
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;             /* 🔥 遮罩本身可上下滾動 */
+    -webkit-overflow-scrolling: touch; /* iOS 慣性滾動 */
+    /* 手機上不要垂直置中，否則標題常被吃掉且無法往上捲 */
+    @media (max-width: 576px){
+        align-items: flex-start;    /* 🔥 靠上排列 */
+        padding: 12px;
+    }
+    &.orderModel{
+        //定位效果
+        .modalDialog{
+            width: 100%;
+            // model整體元件
+            .modalContent{
+
+                //header設定
+                .modalHeader{
+                    position: relative;
+                    border: none;
+                    // header背景設定
+                    &.orderModalHeaderBgSet{
+                        background-color: #6E002C;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .titleSet{
+                        color: #ffffff;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 32px;
+                        font-weight: 900;
+                    }
+
+                    //header關閉icon設定
+                    .orderModalBtnClose{
+                        position: absolute;
+                        top: 50%;
+                        left: auto;
+                        right: 3%;
+                        z-index: 20;
+                        transform: translateY(-50%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        background-color: transparent;
+                        // 關閉icon圖片設定
+                        .materialPageModalBtnCloseImgSet{
+                            width:48px; 
+                            height:48px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                //model本體設定
+                .orderModalBodySet{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background: linear-gradient(90deg, #000000 0%,#60003A 100%);
+                    border-radius: 0 0 5px 5px;
+                    border:none;
+                    padding: 0px 32px 32px 32px;
+                    
+                    .bodyContentBox{
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        .itemSet{
+                            display: flex;
+                            padding: 12px 0px;
+                            border-bottom: 1px solid #6d6d6d;
+                            .titleBox{
+                                width: 100%;
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                .titleSet{
+                                    font-size: 16px;
+                                    color: #ffffff;
+                                }
+                            }
+
+                            .imgBox{
+                                width: 100%;
+                                height: auto;
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                .imgSet{
+                                    width: 60px;
+                                    height: auto;
+                                    object-fit: cover;
+                                    aspect-ratio: 1 / 1;
+                                }
+                            }
+
+                            .textBox{
+                                width: 100%;
+                                display: flex;
+                                justify-content: start;
+                                align-items: center;
+                                .textSet{
+                                    font-size: 16px;
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                    }
+
+                    .orderBtnBox{
+                        width: 100%;
+                        padding: 32px 0 0 0;
+                        display: flex;
+                        justify-content: end;
+                        align-items: center;
+                        .orderBtnSet{
+                            padding: 12px 48px;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        
+
+        //model本體背景
+        .orderModalBodySet{
+            
+        }
+    }    
+}
+

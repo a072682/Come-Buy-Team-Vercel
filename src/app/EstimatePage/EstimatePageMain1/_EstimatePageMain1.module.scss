@@ -1,0 +1,574 @@
+
+
+// 元件最外圍
+.EstimatePageMain1{
+    min-height: calc(100vh - 69px);
+    // 元件背景 
+    .EstimatePageMain1Bg{
+        width: 100%;
+        min-height: calc(100vh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+        // 元件本體
+        .EstimatePageMain1Content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100vh - 69px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 24px;
+
+            // 標題外框
+            .EstimatePageMain1Title{
+                width: 100%;
+                text-align: start;
+                @media (max-width: 992px){
+                    text-align: center;
+                }
+                // 標題
+                .titleSet{
+                    font-size: 32px;
+                    color: #ffffff;
+                }
+                // 標題
+            }
+            // 標題外框
+
+            //圖片上傳欄位外框
+            .EstimatePageMain1ImgUpLordBox{
+                width: 100%;
+                padding: 20px 56px;
+                border: 3px solid #e22288;
+                background: linear-gradient(135deg, #ffffff, #ffaad7);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                gap: 0px;
+                @media (max-width: 992px){
+                    padding: 16px;
+                    align-items: start;
+                    flex-direction: column;
+                    gap: 24px;
+                }
+                
+                // 左邊外框
+                .leftBox{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    // 左邊標題外框
+                    .textTitleBox{
+                        // 左邊標題
+                        .textTitleSet{
+                            font-size: 32;
+                            font-weight: 900;
+                            color: #8b0018;
+                            @media (max-width: 992px){
+                                font-size: 24;
+                                font-weight: 700;
+                            }
+                        }
+                        // 左邊標題
+                    }
+                    // 左邊標題外框
+
+                    // 左邊文字外框
+                    .textBox{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+                        gap: 8px;
+                        
+                        // 左邊文字設定
+                        .textSet{
+                            font-size: 16px;
+                            @media (max-width: 992px){
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+                        }
+                        // 左邊文字設定
+                    }
+                    // 左邊文字外框
+                }
+                // 左邊外框
+
+                // 中間外框
+                .middleBox{
+                    
+                    // LGUP按鈕最外框
+                    .upLordBtnSet{
+                        border: none;
+                        padding: 0;
+                        // 圖片外框
+                        .upLordImgBox{
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #e22288;
+                            border-radius: 12px;
+                            padding: 22px;
+                            // 圖片
+                            .upLordImgSet{
+                                width: 100%;
+                                height: auto;
+                                object-fit: cover;
+                            }
+                            // 圖片
+                            
+                            // 動態圖片外框
+                            .upLordTipImgBox{
+                                width: 150%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0%;
+                                left: auto;
+                                right: -160%;
+                                z-index: 20;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: default;
+                                &.addAnimation{
+                                    /*  新增動畫 */
+                                    animation: float-X-way 2s ease-in-out infinite;
+                                }
+                                @media (max-width: 1200px){
+                                    width: 120%;
+                                    top: 0%;
+                                    right: -130%;
+                                }
+                                // 動態圖片
+                                .upLordTipImgSet{
+                                    position: absolute;
+                                    top: -15%;
+                                    left: -5%;
+                                    z-index: 19;
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                    opacity: 0.9;
+                                    @media (max-width: 1200px){
+                                        top: -5%;
+                                    }
+                                }
+                                // 動態圖片
+                                
+                                // 文字設定
+                                .upLordTipTextSet{
+                                    width: 100%;
+                                    position: relative;
+                                    z-index: 21;
+                                    color: #ffffff;
+                                    font-size: 16px;
+                                }
+                                // 文字設定
+                            }
+                            // 動態圖片外框
+
+                            /* 定義動畫 */
+                            @keyframes float-X-way {
+                                0% {
+                                    transform: translateX(0);   // 起點
+                                }
+                                50% {
+                                    transform: translateX(10px); // 向上移動
+                                }
+                                100% {
+                                    transform: translateX(0);   // 回到原位
+                                }
+                            }
+                        }
+                        // 圖片外框
+                    }
+                    // LGUP按鈕最外框
+
+                    // LGDOWN按鈕最外框
+                    .noteBtnMbSet{
+                        border: none;
+                        background:linear-gradient(90deg, #000000, #60003a);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #ffffff;
+                        padding: 8px 12px;
+                        gap: 16px;
+                        border-radius: 4px;
+                        font-size: 12px;
+                    }
+                    // LGDOWN按鈕最外框
+                }
+                // 中間外框
+
+                // 下邊外框
+                .bottomBox{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24px;
+
+                    // LGUP按鈕最外框
+                    .noteBtnSet{
+                        border: none;
+                        background:linear-gradient(90deg, #000000, #60003a);
+                        justify-content: center;
+                        align-items: center;
+                        color: #ffffff;
+                        padding: 12px 24px;
+                        gap: 16px;
+                        border-radius: 4px;
+                        font-size: 16px;
+                    }
+                    // LGUP按鈕最外框
+
+                    // LGDOWN按鈕最外框
+                    .upLordBtnMbSet{
+                        border: none;
+                        padding: 0;
+                        // 圖片外框
+                        .upLordImgBox{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #e22288;
+                            padding: 10px;
+                            border-radius: 12px;
+                            // 圖片
+                            .upLordImgSet{
+                                padding: 3px;
+                                width: 36px;
+                                height: auto;
+                                object-fit: cover;
+                            }
+                            // 圖片
+                        }
+                        // 圖片外框
+                    }
+                    // LGDOWN按鈕最外框
+
+                    // 文字外框
+                    .upLordTipTextSmBox{
+                        border:2px solid #8b0018;
+                        padding: 6px;
+                        border-radius: 8px;
+                        background-color: #000000;
+                        // 文字設定
+                        .upLordTipTextSet{
+                            color: #ffffff;
+                        }
+                        // 文字設定
+                    }
+                    // 文字外框
+                }
+                // 下邊外框
+            }
+            //圖片上傳欄位外框
+
+            // 下半部區塊外框
+            .EstimatePageMain1BelowBox{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: row;
+                gap: 24px;
+                @media (max-width: 992px){
+                    flex-direction: column;
+                }
+                // 預覽圖最外框
+                .ImagePreviewBox{
+                    width: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24px;
+                    padding: 0px;
+                    @media (max-width: 1200px){
+                        width: 25%;
+                    }
+                    @media (max-width: 992px){
+                        width: 100%;
+                        gap: 16px;
+                        padding: 16px 0;
+                    }
+                    // 標題外框
+                    .ImagePreviewTitle{
+                        width: 100%;
+                        text-align: start;
+                        @media (max-width: 992px){
+                            text-align: center;
+                        }
+                        // 標題
+                        .titleSet{
+                            font-size: 32px;
+                            color: #ffffff;
+                        }
+                        // 標題
+                    }
+                    // 標題外框
+
+                    // 預覽圖外框
+                    .ImagePreviewSet{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 16px;
+                        width: 100%;
+                        height: auto;
+                        background-color: #202020;
+                        border-radius: 12px;
+                        aspect-ratio: 1 / 1;
+                        @media (max-width: 992px){
+                            width: 50%;
+                        }
+                        &.imgActive{
+                            max-width: 220px;
+                            
+                            .ImagePreviewImgSet{
+                                width: 100%;
+                                height: auto;
+                                object-fit: cover;
+                                aspect-ratio: 1 / 1;
+                                border-radius: 12px;
+                            }
+                        }
+                        // 圖片外框
+                        .ImagePreviewImgBox{
+                            max-width: 220px;
+                            width: auto;
+                            height: auto;
+                            // 圖片
+                            .ImagePreviewImgSet{
+                                width: 72px;
+                                height: auto;
+                                object-fit: cover;
+                                @media (max-width: 992px){
+                                    width: 48px;
+                                }
+                            }
+                            // 圖片
+                        }
+                        // 圖片外框
+
+                        // 文字外框
+                        .ImagePreviewTextBox{
+                            // 文字設定
+                            .textSet{
+                                font-size: 24;
+                                font-weight: 500;
+                                color: #ffffff;
+                                text-align: center;
+                            }
+                            // 文字設定
+                        }
+                        // 文字外框
+                    }
+                }
+                // 預覽圖最外框
+
+                // 預覽圖細節最外框
+                .detailBox{
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24px;
+                    @media (max-width: 1200px){
+                        width: 75%;
+                    }
+                    @media (max-width: 992px){
+                        width: 100%;
+                        gap: 16px;
+                        padding: 16px 0;
+                    }
+                    // 標題外框
+                    .detailTitle{
+                        width: 100%;
+                        text-align: start;
+                        // 標題
+                        .titleSet{
+                            font-size: 32px;
+                            color: #ffffff;
+                        }
+                        // 標題
+                    }
+                    // 標題外框
+
+                    // 細節表格外框
+                    .detailTableBox{
+                        width: 100%;
+
+                        // 表格標頭
+                        .titleRow{
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            padding: 15px 24px;
+                            background-color: #8b0018;
+
+                            // 標頭設定
+                            .titleTextSet{
+                                width: 50%;
+                                font-size: 24px;
+                                font-weight: 500;
+                                color: #ffffff;
+                            }
+                            // 標頭設定
+                        }
+                        // 表格標頭
+
+                        // 表格內容外框
+                        .tableContentBox{
+
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            background: linear-gradient(90deg, #000000, #60003a);
+                            // 縮圖外框
+                            .tableImgItem{ 
+                                padding: 12px 24px;
+                                width: 50%;
+                                // 縮圖設定
+                                .tableImgSet{
+                                    max-width: 65px;
+                                    width: 100%;
+                                    height: auto;
+                                    aspect-ratio: 1 / 1;
+                                    object-fit: cover;
+                                    border-radius: 8px;
+                                    &.imgActive{
+
+                                    }
+                                }
+                                // 縮圖設定
+                            }
+                            // 縮圖外框
+
+                            // 控制鈕外框
+                            .tableItem{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 12px;
+                                // 加號按鈕
+                                .itemAddBtnSet{
+                                    background-color: transparent;
+                                    padding: 0px;
+                                    border: none;
+                                    // 加號圖片
+                                    .itemAddBtnImgSet{
+                                        width: 100%;
+                                        height: auto;
+                                        object-fit: cover;
+                                    }
+                                    // 加號圖片
+                                }
+                                // 加號按鈕
+
+                                // 顯示數量
+                                .itemSet{
+                                    font-size: 16px;
+                                    color: #ffffff;
+                                    padding: 4px 15px;
+                                    border: 1px solid #ffffff;
+                                    border-radius: 4px;
+                                }
+                                // 顯示數量
+
+                                // 減號按鈕
+                                .itemSubBtnSet{
+                                    background-color: transparent;
+                                    padding: 0px;
+                                    border: none;
+                                    // 減號圖片
+                                    .itemSubBtnImgSet{
+                                        width: 100%;
+                                        height: auto;
+                                        object-fit: cover;
+                                    }
+                                    // 減號圖片
+                                }
+                                // 減號按鈕
+                            }
+                            // 控制鈕外框
+                        }
+                        // 表格內容外框
+                    }
+                    // 細節表格外框
+                }
+                // 預覽圖細節最外框
+            }
+            // 下半部區塊外框
+
+            // 下一頁按鈕外框
+            .EstimatePageMain1NextBtn{
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .EstimatePageMain1NextBtnBox{
+                    width: 40%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    left: auto;
+                    right: 5%;
+                    z-index: 20;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: 2px solid #8b0018;
+                    border-radius: 8px;
+                    cursor: default;
+                    @media (max-width: 992px){
+                        right: 0%;
+                    }
+                    .nextBtnTipTextSet{
+                        width: auto;
+                        position: relative;
+                        z-index: 21;
+                        color: #ffffff;
+                        font-size: 16px;
+                    }
+                }
+            }
+            // 下一頁按鈕外框
+        }
+        // 元件本體
+    }
+    // 元件背景
+}
+// 元件最外圍
+
+

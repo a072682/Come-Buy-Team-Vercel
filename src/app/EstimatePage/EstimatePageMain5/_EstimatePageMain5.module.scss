@@ -1,0 +1,122 @@
+
+.EstimatePageMain5{
+    height: auto;
+    .EstimatePageMain5Bg{
+        min-height: calc(100vh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+
+        .EstimatePageMain5Content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100vh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0px;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+            gap: 24px;
+
+            .EstimatePageMain5Title{
+                width: 100%;
+                text-align: start;
+                
+                .titleSet{
+                    font-size: 32px; 
+                    color: #ffaad7;
+                }
+            }
+
+            .EstimatePageMain5TextBox{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                gap: 12px;
+                .textSet{
+                    font-size: 24px;
+                    font-weight:500;
+                    color: #ffffff;
+                    @media (max-width: 1400px){
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .EstimatePageMain5NoteBox{
+                width: auto;
+                background-color: #8b0018;
+                padding: 12px 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                border: 1px solid #ffaad7;
+                border-radius: 4px;
+                @media (max-width: 992px){
+                    margin: 0 auto;
+                    width: 100%;
+                }
+                .noteIconSet{
+                    color: #ffffff;
+                }
+
+                .noteTextBox{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    gap: 8px;
+                    .textSet{
+                        font-size: 16px;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .EstimatePageMain5CheckBtnBox{
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                @media (max-width: 992px){
+                    justify-content: center;
+                }
+                .EstimatePageMain5CheckBtnSet{
+                    font-size: 24px;
+                    font-weight: 900;
+                    padding: 24px 88px;
+                    @media (max-width: 992px){
+                        padding: 12px 48px;
+                    }
+                }
+            }
+
+         
+        }
+    }
+}
+
+
+

@@ -1,0 +1,72 @@
+
+
+.userDropdown{
+    display: block;
+    @media (max-width: 992px){
+        display: none;
+    }
+    cursor: pointer;
+    .userDropdownToggle{
+
+        .userItemSet{
+            width: 36px;
+            height: 36px;
+            border: none;
+            padding: 0px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .userItemImgSet{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius:50%;
+
+                &.textVer{
+                    width: 100%;
+                    height: 100%;
+                    background-color: #8B0018;
+                    border-radius:50%;
+                    font-size: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .userDropdownListWrapper:global(.dropdown-menu){
+
+        /* 下拉視窗位置 */
+        &.show{
+            width: 250px;
+            top:150%;
+            right:0%;
+            left: auto;
+            // transform: translate(-50%);
+            padding: 0px;
+            background-color: #000000;
+            border:3px solid #E22288;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 下拉視窗位置 */
+
+        .dropdownItemSet{
+            color: #ffffff;
+            background-color: #000000;
+            font-size: 16px;
+            width: 100%;
+            padding: 24px 0px;
+            text-align: center;           
+            &:hover{
+                background-color: #E22288;
+            }
+        }
+    }
+}

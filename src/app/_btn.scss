@@ -1,0 +1,453 @@
+//btn01
+    .btn01Set{
+        width: fit-content;
+        height: fit-content;
+        background-color: #00B1B1;
+        box-shadow: 0 0 10px #00B1B1, 0 0 40px #00B1B1;
+        border-radius: 5px;
+        border: none;
+        line-height: 1.5;
+        color:#ffffff;
+        transition: 0.2s;
+    }
+    .btn01Set:hover{
+        background: #00B1B1;
+        box-shadow: 0 0 10px #00B1B1, 0 0 40px #00B1B1, 0 0 80px #00B1B1;
+        color:#fff;
+    }
+    .btn01Set:disabled,.btn01Set:disabled:hover{
+        background: #202020;
+        color:#454545;
+        box-shadow: 0 0 0px transparent;
+    }
+//btn01
+
+/*btn02*/
+.btn02Set{
+    width: fit-content;
+    height: fit-content;
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color:#6e002c;
+    transition: 0.2s;
+    
+    .btn02IconSet{
+        color: #000000;
+    }
+}
+.btn02Set:hover{
+    box-shadow: 0 0 10px #fff,0 0 40px #ffaad7,0 0 80px #E22288;
+}
+.btn02Set:disabled,.btn02Set:disabled:hover{
+    background: #202020;
+    color:#454545;
+    box-shadow: 0 0 0px transparent;
+}
+/*btn02*/
+
+/*pagination-btn*/
+.pagination-btn01{
+    background-color: transparent;
+    border: none;
+    .pagination-img01-set{
+        filter:drop-shadow(0 0 10px #E22288);
+
+        /*  新增動畫 */
+        animation: floatUpDown 2s ease-in-out infinite;
+    }
+
+    &:hover{
+        .pagination-img01-set{
+            filter:drop-shadow(0 0 10px #E22288) drop-shadow(0 0 20px #E22288) drop-shadow(0 0 40px #E22288);
+            /* 暫停動畫 */
+            animation-play-state: paused;
+            // 強制回到原位（可選）
+            transform: translateY(0); 
+        }
+    }
+}
+
+/* 定義動畫 */
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);   // 起點
+  }
+  50% {
+    transform: translateY(-10px); // 向上移動
+  }
+  100% {
+    transform: translateY(0);   // 回到原位
+  }
+}
+
+.pagination-btn02{
+    background-color: transparent;
+    border: none;
+    .pagination-img02-set{
+        filter:drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 20px #ffffff);
+        /*  新增動畫 */
+        animation: floatUpDown 2s ease-in-out infinite;
+    }
+}
+.pagination-btn02:hover{
+    .pagination-img02-set{
+        filter:drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #ffffff);
+        /* 暫停動畫 */
+        animation-play-state: paused;
+        // 強制回到原位（可選）
+        transform: translateY(0);
+    }
+}
+/*pagination-btn*/
+
+/*swiperBtn*/
+.swiperBtnR,.swiperBtnL{
+    background-color: transparent;
+    border: none;
+    .imgBox{
+        position: relative;
+        max-width: 53px;
+        width: 53px;
+        height: auto;
+        aspect-ratio: 53 / 60; 
+        @media (max-width: 576px){
+            width: 26px;
+        }
+        .imgSet{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: 0.2s;
+            filter:drop-shadow(0 0 0px transparent);
+        }
+    }
+    
+}
+.swiperBtnR:hover.swiperBtnL:hover{
+    .imgBox{
+        .imgSet{
+            filter:drop-shadow(0 0 10px #E22288);
+        }
+    }
+}
+/*swiperBtn*/
+
+/*box01*/
+.box01Set{
+    color: #fff;
+    position: relative;
+    border: none;
+    background: linear-gradient(90deg, #000000, #60003A) bottom left;
+    clip-path: polygon(0 0,100% 0,100% 100%,20px 100%,0 calc(100% - 40px));
+    background-repeat: no-repeat; 
+}
+.box01Set:before {
+    content: "";
+    position: absolute;
+    inset: 0; //位置的簡寫寫法
+    background: linear-gradient(90deg, #F478FF , #f22082),;
+    clip-path: polygon(0 0,100% 0,100% 100%,40px 100%,0 calc(100% - 40px),0 0,2px  2px ,2px calc(100% - 40px - 0.83px),calc(40px + 0.83px) calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 2px,2px 2px);
+}
+/*box01*/
+
+
+
+
+.main-btn2-set{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 88px;
+    padding-left: 88px;
+    background-color: #E22288;
+    border-radius: 5px;
+    border: none;
+    font-size: 24px;
+    color:#ffffffb7;
+    transition: 0.2s;
+}
+.main-btn2-set:hover{
+    background: #E22288;
+    box-shadow: 0 0 10px #E22288, 0 0 40px #E22288, 0 0 80px #E22288;
+    color:#fff;
+}
+.main-btn2-set:disabled,.main-btn2-set:disabled:hover{
+    background: #202020;
+    color:#454545;
+    box-shadow: 0 0 0px transparent;
+}
+
+
+
+
+.main-btn2-set-sm{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 48px;
+    padding-left: 48px;
+    background-color: #E22288;
+    border-radius: 5px;
+    border: none;
+    font-size: 24px;
+    color:#ffffffb7;
+    transition: 0.2s;
+}
+.main-btn2-set-sm:hover{
+    background: #E22288;
+    box-shadow: 0 0 10px #E22288, 0 0 40px #E22288, 0 0 80px #E22288;
+    color:#fff;
+}
+.main-btn2-set-sm:disabled,.main-btn2-set-sm:disabled:hover{
+    background: #202020;
+    color:#454545;
+    box-shadow: 0 0 0px transparent;
+}
+/*main-btn*/
+
+
+
+
+/*qP-main2-box*/
+.qP-main2-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #202020;
+    clip-path: polygon(0 0,calc(100% - 30px) 0,100% 20px,100% 100%,0 100%); /*calc(100% - 80px)靠上方點 100% 20px 靠下方點*/
+}
+.qP-main2-box:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:linear-gradient(90deg,#f22082,#F478FF);
+    clip-path: polygon(0 0,calc(100% - 30px) 0,100% 20px,100% 100%,0 100%,0 0,2px  2px ,2px calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) calc(20px + 0.83px),calc(100% - 30px - 0.83px) 2px,2px 2px);/*calc(60px + 0.83px)靠下方點 calc(100% - 80px - 0.83px) 靠下方點 由於是繞回來所以會反過來寫*/
+}
+/*qP-main2-box*/
+
+/*qP-main3-accordion-btn*/
+.accordion-button01{/*accordion-button(按鈕未按下)基本設定*/
+    width: 100%;
+    background-color: #000000;
+    color:#00B1B1;
+    border: 2px solid #6e002c;
+    border-radius:5px 5px 5px 5px;
+    overflow-anchor: none;//當容器有新內容時如果過長且持續有新內容產出，設定auto會讓卷軸保持不動，設定none會讓卷軸持續向上(如果內容產出是往下的話)
+    transition: color .15s ease-in-out,
+                background-color .15s ease-in-out, 
+                border-color .15s ease-in-out,
+                border-bottom .15s ease-in-out,
+                border-top .15s ease-in-out,
+                border-radius .15s ease-in-out;
+}
+.accordion-button01:not(.collapsed){/*accordion-button(按鈕按下)基本設定*/
+    background-color: #232323;
+    border-radius:5px 5px 0 0;
+    border-bottom: none;
+}
+.accordion-button01::after{/*accordion-button::after(按鈕未按下)更改icon*/
+    //icon程式碼
+    // content:"\e313";/*如果要使用icon的話則開啟這段程式碼並關閉圖片程式碼*/
+    // font-family: "Material Symbols Outlined";
+    //icon程式碼
+
+    content:"";//偽元素一定要有content:""才可以動作因此關閉時記得要留一個空白的指令
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink:0;
+    width: 28px;
+    height: 28px;
+    transform:rotate(-90deg);//初始角度
+    
+    //圖片程式碼
+    background-image: url(/assets/images/Keyboardarrowdown.png);//如果要使用圖片的話則開啟這段程式碼並關閉icon程式碼
+    background-repeat: no-repeat; 
+    background-size: 28px;
+    //圖片程式碼
+    transition:transform .2s ease-in-out;
+}
+.accordion-button01:not(.collapsed)::after{/*accordion-button::after(按鈕按下)更改icon*/
+    /*判斷式為如果class中accordion-button後方沒有collapsed責執行以下程式碼*/
+    
+    //icon程式碼
+    // content:"\e313";/*如果要使用icon的話則開啟這段程式碼並關閉圖片程式碼*/
+    // font-family: "Material Symbols Outlined";
+    //icon程式碼
+
+    content:"";
+
+    //圖片程式碼
+    background-image: url(/assets/images/Keyboardarrowdown.png);//如果要使用圖片的話則開啟這段程式碼並關閉icon程式碼
+    //圖片程式碼
+    
+    transform:rotate(0deg);
+}
+.accordion-body-set{
+    background-color: #232323;
+    width: 100%;
+    border: 2px solid #6e002c;
+    border-top: none;
+    border-radius:0 0 5px 5px;
+}
+/*qP-main3-accordion-btn*/
+
+
+
+
+
+
+
+/*aside-navbar-btn*/
+.aside-navbar-btn-set-sm{
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 900;
+    padding-top:16px ;
+    padding-bottom:16px ;
+    padding-right:auto;
+    padding-left:auto;
+    color: #ffffff;
+    background-color:#000000 ;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    transition: 0.2s;
+}
+.aside-navbar-btn-set-sm:hover{
+    background-color: #8b0018;
+    border-bottom: 2px solid #8b0018;
+}
+
+.aside-navbar-btn-set{
+    width: 240px;
+    height: 101px;
+    font-size: 24px;
+    font-weight: 700;
+    padding-top:36px ;
+    padding-bottom:36px ;
+    padding-right:24px ;
+    padding-left:24px ;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    transition: 0.2s;
+
+}
+.aside-navbar-btn-set:hover{
+    background-color: #8b0018;
+    border-bottom: 2px solid #8b0018;
+}
+/*aside-navbar-btn*/
+
+/*select-btn*/
+.select-btn-set,.select-btn-set[aria-expanded="false"]{
+    width: 280px;
+    height: 84px;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #ffffff;
+    padding-top:24px ;
+    padding-bottom:24px ;
+    padding-right:auto;//75px
+    padding-left:auto;
+    background: transparent;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1200px){
+        width: auto;
+        height: auto;
+        font-size: 24px;
+        padding-right:12px ;
+        padding-left:12px;
+    }
+    .material-symbols-outlined{
+        color: #ffffff;
+        transform:rotate(0deg);
+    }
+        
+}
+.select-btn-set:hover,.select-btn-set:active,.select-btn-set:focus{
+    background-color: #E22288;
+    @media (max-width: 1200px){
+        background-color: transparent;
+    }
+}
+.select-btn-set:hover,.select-btn-set:active{
+    @media (max-width: 1200px){
+        .material-symbols-outlined{
+            color:#E22288;
+        }
+    }
+}
+/*select-btn*/
+
+/*upLord-fileFormat-sm-box*/
+.upLord-fileFormat-sm-box-set{ 
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: linear-gradient(90deg, #000000, #60003A);
+    color:#fff;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    .sec-btn1-img-set{
+        color: #fff;
+    }
+    @media (max-width: 992px){
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-right: 24px;
+        padding-left: 24px;
+        font-size: 16px;
+    }
+}
+/*upLord-fileFormat-sm-box*/
+
+/*qP-main2-box*/
+.oEstimate-main2-btn {
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 8px 32px;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    border:none;
+    outline: none;
+    color:#ffffff;
+    clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%); /*calc(100% - 80px)靠上方點 100% 20px 靠下方點*/
+}
+.oEstimate-main2-btn:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border:none;
+    background:#ffffff;
+    clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%,0 0,2px  2px ,2px calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) calc(10px + 0.83px),calc(100% - 10px - 0.83px) 2px,2px 2px);/*calc(60px + 0.83px)靠下方點 calc(100% - 80px - 0.83px) 靠下方點 由於是繞回來所以會反過來寫*/
+}
+
+.oEstimate-main2-btn:hover,.oEstimate-main2-btn:hover:before,
+.oEstimate-main2-btn.active.active,.oEstimate-main2-btn.active.active:before
+{
+    background-color:#00B1B1;
+    background:#00B1B1;
+    color:#ffffff;
+}
+
+/*qP-main2-box*/
+

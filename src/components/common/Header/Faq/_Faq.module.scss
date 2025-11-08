@@ -1,0 +1,93 @@
+
+
+.FaqCssDropdown{
+    :global(.dropdown-toggle){
+        &::after{
+            display: none;
+        }
+    }
+    .FaqDropdownToggle{
+        /* ── 預設（normal state）── */
+        --bs-btn-bg: transparent;                /* 按鈕底色（預設狀態） */
+        --bs-btn-border-color: transparent;      /* 按鈕邊框色（預設狀態） */
+        --bs-btn-color: #fff;                    /* 按鈕文字顏色（預設狀態） */
+
+        /* ── 滑過（:hover）── */
+        --bs-btn-hover-bg: transparent;          /* 滑過時底色 */
+        --bs-btn-hover-border-color: transparent;/* 滑過時邊框色 */
+        --bs-btn-hover-color: #fff;              /* 滑過時文字顏色 */
+
+        /* ── 按下/活躍（:active、.active）── */
+        --bs-btn-active-bg: transparent;         /* 按下時底色 */
+        --bs-btn-active-border-color: transparent;/* 按下時邊框色 */
+        --bs-btn-active-color: #fff;             /* 按下時文字顏色 */
+
+        /* ── 聚焦陰影（:focus-visible）── */
+        --bs-btn-focus-shadow-rgb: 0,0,0;        /* focus 的外框陰影色（RGB），設 0 代表無色 → 看起來等於「關掉」 */
+
+        /* 你的客製樣式（下面可以照你原本的） */
+        font-size: 16px;
+        padding: 12px 8px 9px 8px;
+        background-color: transparent;
+        border-color: transparent;
+        border: none;
+        border-bottom:3px solid transparent;
+        border-radius: 0;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon { 
+            display: inline-block;
+            transition: transform .2s ease, color .2s ease; 
+            transform-origin: 50% 50%; //變形的支點（預設在元素的正中心）
+        }
+
+        &:hover{
+            border-bottom:3px solid #E22288;
+            .icon{
+                color:#E22288;
+            }
+        }
+
+        &.active{
+            border-bottom:3px solid #E22288;
+            .icon{
+                color:#E22288;
+                transform:rotate(-180deg);
+                transition: 0.2s;
+            }
+        }
+    }
+    .FaqDropdownListWrapper{
+
+        /* 下拉視窗位置 */
+        &:global(.show){
+            width: 250px;
+            top:125%;
+            left: 50%;
+            transform: translate(-50%);
+            padding: 0px;
+            background-color: #000000;
+            border:3px solid #E22288;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 下拉視窗位置 */
+
+        .dropdownItemSet{
+            color: #ffffff;
+            background-color: #000000;
+            font-size: 16px;
+            width: 100%;
+            padding: 24px 0px;
+            text-align: center;           
+            &:hover{
+                background-color: #E22288;
+            }
+        }
+    }
+}

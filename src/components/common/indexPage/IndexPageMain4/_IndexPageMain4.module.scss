@@ -1,0 +1,136 @@
+
+
+// 元件最外框
+.main4{
+    width: 100%;
+    min-height: calc(100vh - 69px);
+    outline: none;
+    border: none;
+    background-color: #000000;
+    background-image: 
+      url("/images/Bg/main4/main4-bg-1.png"), 
+      url("/images/Bg/main4/main4-bg-2.png");
+    background-repeat: 
+      no-repeat, 
+      no-repeat;
+    background-position:
+      bottom right,
+      top left;
+    @media (max-width: 992px){
+      background-image: 
+        url("/images/Bg/main4/main4-bg-sm-1.png"), 
+        url("/images/Bg/main4/main4-bg-sm-2.png");
+    }
+    // 元件外框
+    .main4Content{
+        width: 100%;
+        padding: 144px 0;
+        min-height: calc(100vh - 69px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 992px){
+            padding: 64px 0;
+        }
+        // 左邊區塊
+        .main4LeftBox{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 48px;
+            @media (max-width: 992px){
+                align-items: center;
+            }
+            // 標題外框
+            .main4Title{
+                
+                // 標題
+                .main4TitleSet{
+                    font-size: 48px;
+                    font-weight: 900;
+                    color: #ffffff;
+                    text-align: center;
+                    @media (max-width: 992px){
+                        font-size: 32px;
+                    }
+                }
+                // 標題
+            }
+            // 標題外框
+
+            // 連結按鈕
+            .mian4CheckBtnSet{
+                margin-top: 24px;
+                font-size: 24px;
+                padding: 24px 88px;
+                @media (max-width: 992px){
+                    padding: 12px 48px;
+                }
+            }
+            // 連結按鈕
+        }
+        // 左邊區塊
+        
+        //卡片設定
+        .main4CardBox{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            //單一卡片設定
+            .cardItem{
+                width: 100%;
+                height: 120px;
+                font-weight: 900;
+                padding: 42px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media (max-width: 576px){
+                    
+                }
+                // 文字設定
+                .textSet{
+                    max-width: 100%;
+                    text-align: center;
+                    font-size: 24px;
+                    white-space: normal;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @media (max-width: 768px){
+                        white-space: pre-line;
+                    }
+                    @media (max-width: 576px){
+                        max-width: 130px;
+                        min-height: 72px;
+                        white-space: pre-line;
+                    }
+                }
+                // 文字設定
+            }
+            //單一卡片設定
+        }
+        //卡片設定
+
+        // 連結按鈕
+        .mian4CheckSmBtnSet{
+            display: block;
+            margin: 0px auto;
+            font-size: 24px;
+            padding: 24px 88px;
+            @media (max-width: 992px){
+                padding: 12px 48px;
+            }
+        }
+        // 連結按鈕
+    }
+    // 元件外框
+}
+// 元件最外框
