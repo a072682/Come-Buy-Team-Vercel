@@ -40,8 +40,7 @@ export default function Header() {
         //連線測試
     //#endregion
 
-    //#region 讀取中央登入狀態資料
-        //讀取中央資料
+    //#region 讀取連線狀態資料
         const linkState = useSelector((state)=>{
             return(
                 state.login.linkState
@@ -52,8 +51,7 @@ export default function Header() {
     //#endregion
 
 
-    //#region 讀取中央登入資料
-        //讀取中央資料
+    //#region 讀取登入狀態資料
         const loginState = useSelector((state)=>{
             return(
                 state.login.isLogin

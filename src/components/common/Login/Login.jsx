@@ -8,9 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import LoginCss from "./_Login.module.scss";
-import { checkLogin, loginUser } from "@/store/slice/loginSlice";
-
-
+import { checkLogin, loginUser, userGoogleLogin } from "@/store/slice/loginSlice";
 
 //setHandleLoginPageModal,loginModalShow,setLoginModalShow 都移除
 
@@ -131,13 +129,13 @@ function Login ({onClose,onSwitch}){
     //#endregion
 
     //#region google登入api
-        // const handleGoogleLogin = async() => {
-        //     try{
-        //         await dispatch(userGoogleLogin()).unwrap();
-        //     }catch(error){
-        //         console.log(error);
-        //     }
-        // };
+        const handleGoogleLogin = async() => {
+            try{
+                await dispatch(userGoogleLogin()).unwrap();
+            }catch(error){
+                console.log(error);
+            }
+        };
     //#endregion
 
     //#region 點背景遮罩時Modal關閉,點內容不關
@@ -256,7 +254,7 @@ function Login ({onClose,onSwitch}){
                             
                             
                             <h3 className={LoginCss.otherTitleSet}>其他帳號登入</h3>
-                            <button className={LoginCss.googleGroupSet}>
+                            <button className={LoginCss.googleGroupSet} onClick={()=>{handleGoogleLogin();}}>
                                 <div className={LoginCss.imgBox}>
                                     <Image  className={LoginCss.googleImgSet} 
                                         src={"/images/LoginPage/ic_google.png"}

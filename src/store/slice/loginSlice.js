@@ -2,6 +2,8 @@
 
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+//google登入相關
+import { signIn } from "next-auth/react";
 
 axios.defaults.withCredentials = true;
 
@@ -167,7 +169,7 @@ export const loginSlice = createSlice({
             async (_, { dispatch }) => {
                 try {
                     const handleLogoutRef = await axios.post(`/api/logout`);
-                    console.log("登出成功");
+                    console.log("登出成功",handleLogoutRef.data);
                     dispatch(logout());
                 } catch (error) {
                     console.log("登出失敗");
@@ -175,6 +177,24 @@ export const loginSlice = createSlice({
             }
         );
         //登出
-    //#endregion    
+    //#endregion  
+    
+    //#region google登入api
+        export const userGoogleLogin = createAsyncThunk(
+            "login/userGoogleLogin",
+            async (_,{ dispatch, rejectWithValue }) => {
+                try {
+                    // 不帶 callbackUrl = 使用預設：回到呼叫登入的同一頁
+                    await signIn("google", {
+                        callbackUrl: "/api/auth/finalize",
+                    });
+                    return true; // 會跳轉，一般不會真的用到回傳值
+                } catch (error) {
+                    console.log("google登入失敗");
+                    return rejectWithValue("google登入失敗");
+                }
+            }
+        );
+    //#endregion
 
 export default loginSlice.reducer;
