@@ -1,7 +1,8 @@
 
 
-
+import { Suspense } from "react";
 import QAPage from "@/singlePages/QAPage/QAPage";
+
 
 
 export const metadata = {
@@ -13,7 +14,9 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <QAPage />
+      <Suspense fallback={<div>頁面載入中...</div>}>
+        <QAPage />
+      </Suspense>
     </>
   );
 }
