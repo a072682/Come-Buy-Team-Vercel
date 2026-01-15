@@ -43,7 +43,7 @@ export async function GET(req) {
       { expiresIn: "1h" }
     );
     // 設定前端頁面
-    const redirectUrl = `http://localhost:3000/tokenPage?value=${encodeURIComponent(token)}`;
+    const redirectUrl = `${process.env.WEBBASE_URL}/tokenPage?value=${encodeURIComponent(token)}`;
 
     // 回歸前端頁面
     return NextResponse.redirect(redirectUrl);
