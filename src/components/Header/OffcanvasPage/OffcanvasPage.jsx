@@ -1,8 +1,8 @@
 import './_OffcanvasPage.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
-import OffcanvasNews from './offcanvasNews/offcanvasNews';
-import OffcanvasFaq from './offcanvasFaq/offcanvasFaq';
+import OffcanvasNews from './offcanvasNews/OffcanvasNews';
+import OffcanvasFaq from './offcanvasFaq/OffcanvasFaq';
 import OffcanvasUser from './offcanvasUser/OffcanvasUser';
 import { useDispatch } from 'react-redux';
 import { MODALS, open } from '@/store/slice/modalSlice';
