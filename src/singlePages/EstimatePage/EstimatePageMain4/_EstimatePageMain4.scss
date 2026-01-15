@@ -1,0 +1,312 @@
+//捲動高度設定
+#EstimatePageMain4 {
+  scroll-margin-top: 69px;
+}
+
+.EstimatePageMain4{
+    height: auto;
+    .EstimatePageMain4-bg{
+        min-height: calc(100dvh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+
+        .EstimatePageMain4-content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100dvh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0px;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 24px;
+
+            .EstimatePageMain4-title{
+                width: 100%;
+                text-align: flex-start;
+                @media (max-width: 992px){
+                    text-align: center;
+                }
+                .title-set{
+                    font-size: 32px;
+                    color: #ffffff;
+                }
+            }
+
+            .EstimatePageMain4-note-box{
+                width: auto;
+                background-color: #8b0018;
+                padding: 12px 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                border: 1px solid #ffaad7;
+                border-radius: 4px;
+                @media (max-width: 992px){
+                    margin: 0 auto;
+                    width: 100%;
+                }
+                .note-icon-set{
+                    color: #ffffff;
+                }
+
+                .note-text-box{
+
+                    .text-set{
+                        font-size: 16px;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .EstimatePageMain4-group-box{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 12px;
+                
+                @media (max-width: 992px){
+                    flex-direction: column;
+                }
+                .label-set{
+                    min-width: 120px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #ffffff;
+                }
+
+                .EstimatePageMain4-groupBody-box{
+                    position: relative;
+                    width: 100%;
+                    max-width: 452px;
+                    @media (max-width: 1200px){
+                        max-width: 100%;
+                    }
+
+                    .dropdown{
+                        display: block;
+                        .inputBody-set{
+                            width: 100%;
+                            background-color: transparent;
+                            font-size: 24px;
+                            font-weight: 700;
+                            padding: 26px 36px;
+                            color: #ffffff;
+                            border: 1px solid #ffffff;
+                            border-radius: 4px;
+                            @media (max-width: 992px){
+                                font-size: 16px;
+                                padding: 16px 24px;
+                            }
+                        }
+
+                        .groupBtn-box{
+
+                            .downBtn-set{
+                                position: absolute;
+                                z-index: 10;
+                                left: 90%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                                border: none;
+                                background-color: transparent;
+                                width: 48px;
+                                @media (max-width: 576px){
+                                    left: 93%;
+                                }
+                                .downBtn-img-set{
+                                    max-width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .dropdown-menu{
+                            width: 100%;
+                            padding: 0;
+                            .menu-column {
+                                display: flex;
+                                flex-direction: column;
+                                .menu-btn {
+                                    padding: 24px 0;
+                                    text-align: center;
+                                    background: #000000;
+                                    border: none;
+                                    cursor: pointer;
+                                    font-size: 24px;
+                                    transition: background-color 0.2s;
+                                    color: #ffffff;
+                                        &:hover {
+                                            background-color: #e22288;
+                                        }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            .EstimatePageMain4-calendarGroup-box{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 12px;
+                @media (max-width: 992px){
+                    flex-direction: column;
+                    gap: 12px;
+                }
+                .label-set{
+                    min-width: 120px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #ffffff;
+                }
+
+                .EstimatePageMain4-groupBody-box{
+                    position: relative;
+                    width: 100%;
+
+                    .dropdown{
+                        display: block;
+                        .inputBody-set{
+                            width: 100%;
+                            background-color: transparent;
+                            font-size: 24px;
+                            font-weight: 700;
+                            padding: 26px 36px;
+                            color: #ffffff;
+                            border: 1px solid #ffffff;
+                            border-radius: 4px;
+                            text-align: center;
+                            
+                            @media (max-width: 992px){
+                                font-size: 16px;
+                                padding: 16px 24px;
+                            }
+                        }
+
+                        .groupBtn-box{
+                            .calendarIcon-set{
+                                position: absolute;
+                                z-index: 10;
+                                left: 10%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                                border: none;
+                                background-color: transparent;
+                                width: 48px;
+                                height: auto;
+                                @media (max-width: 992px){
+                                    width: 24px;
+                                }
+                                .calendarIcon-img-set{
+                                    max-width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                            .downBtn-set{
+                                position: absolute;
+                                z-index: 10;
+                                left: 90%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                                border: none;
+                                background-color: transparent;
+                                width: 48px;
+                                height: auto;
+                                @media (max-width: 576px){
+                                    left: 93%;
+                                }
+                                .downBtn-img-set{
+                                    max-width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .dropdown-menu{
+                            width: 100%;
+                            padding: 0;
+                        }
+                    }
+                }
+            }      
+            
+            .EstimatePageMain4-NextBtn-box{
+                position: relative;
+                width: 100%;
+                margin-top: 72px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .pagination-img-box02{
+                    
+                    .pagination-img02-set{
+                        
+                       
+                    }
+                }
+
+                .EstimatePageMain4-next-btn-box{
+                    width: 40%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    left: auto;
+                    right: 5%;
+                    z-index: 20;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: 2px solid #8b0018;
+                    border-radius: 8px;
+                    cursor: default;
+                    @media (max-width: 992px){
+                        right: 0%;
+                    }
+                    .nextBtnTipText-set{
+                        width: auto;
+                        position: relative;
+                        z-index: 21;
+                        color: #ffffff;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,160 @@
+
+.QAMain4{
+
+    .QAMain4-bg{
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-1.png"), 
+            url("/images/Bg/main4/main4-bg-2.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            bottom right,
+            top left;
+        @media (max-width: 1200px){
+            background-image: 
+            url("/images/Bg/main4/main4-bg-sm-1.png"), 
+            url("/images/Bg/main4/main4-bg-sm-2.png");
+        }
+
+        .QAMain4-content{
+            
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 72px 0;
+            @media (max-width: 992px){
+                gap: 32px;
+                padding: 64px 0;
+            }
+
+            .QAMain4-title{
+
+                .title-set{
+                    color: #ffaad7;
+                    font-size: 32px;
+                    font-weight: 900;
+                    text-align: center;
+                    @media (max-width: 992px){
+                        text-align: start;
+                    }
+                }
+            }
+
+            .QAMain4-content-box{
+
+                
+                .Accordion-set{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    .accordionItemSet{
+
+                    }
+
+                    .accordion-body-set{
+
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+
+//管風琴元件相關
+    .accordionItemSet.accordionItemSet{
+        background-color: transparent;
+        border:none;
+        outline:none;
+        box-shadow: none;
+    }
+
+
+    .accordion-button:focus {
+        box-shadow: none !important; /* ✅ 移除點擊時的藍色外框陰影 */
+        outline: none !important; /* ✅ 移除可能的 outline */
+    }
+
+    .accordion-button.accordion-button {
+        font-size: 24px;
+        font-weight: 700;
+        padding: 36px 48px 36px 48px;
+        background-color: #000000;
+        color: #ffffff;
+        border: 2px solid #6e002c;
+        outline: none;
+        box-shadow: none;
+        border-radius:5px 5px 5px 5px;
+        overflow-anchor: none;//當容器有新內容時如果過長且持續有新內容產出，設定auto會讓卷軸保持不動，設定none會讓卷軸持續向上(如果內容產出是往下的話)
+        transition: color .15s ease-in-out,
+                    background-color .15s ease-in-out, 
+                    border-color .15s ease-in-out,
+                    border-bottom .15s ease-in-out,
+                    border-top .15s ease-in-out,
+                    border-radius .15s ease-in-out;
+        @media (max-width: 1200px){
+            padding: 16px 16px 16px 18px;
+        }
+    }
+
+    .accordion-button:not(.collapsed).accordion-button:not(.collapsed) {
+        background-color: #232323; /* 變更展開時的背景色 */ /* 變更展開時的文字顏色 */
+        border-bottom: none;
+        outline: none;
+        box-shadow: none;
+        border-radius: 5px 5px 0px 0px;
+        /* 讓圓角變大來確保 `border-radius` 有變化 */
+    }
+
+    .accordion-body-set{
+        font-size: 24px;
+        font-weight: 700;
+        padding: 0px 48px 36px 48px;
+        background-color: #232323;
+        width: 100%;
+        border: 2px solid #6e002c;
+        color: #ffffff;
+        border-top: none;
+        border-radius:0 0 5px 5px;
+
+        @media (max-width: 1200px){
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0px 16px 16px 16px;
+        }
+    }
+
+    .accordion-button.accordion-button::after{
+        content:"";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink:0;
+        width: 28px;
+        height: 28px;
+        transform:rotate(-90deg);
+        
+        background-image: url("/images/Keyboardarrowdown.png");
+        background-repeat: no-repeat; 
+        background-size: 28px;
+        object-fit: cover;
+        transition:transform .2s ease-in-out;
+    }
+    .accordion-button:not(.collapsed).accordion-button:not(.collapsed)::after{
+        content:"";
+        background-image: url("/images/Keyboardarrowdown.png");
+        transform:rotate(0deg);
+    }
+//管風琴元件相關

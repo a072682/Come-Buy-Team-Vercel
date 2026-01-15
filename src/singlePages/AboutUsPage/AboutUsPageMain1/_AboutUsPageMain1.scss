@@ -1,0 +1,103 @@
+
+.AboutUsMain1::before{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 69px;
+}
+
+.AboutUsMain1{
+    min-height: 100dvh;
+    .AboutUsMain1-bg{
+        min-height: calc(100dvh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+
+        .AboutUsMain1-content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100dvh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0px;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .AboutUsMain1-Introduce-box{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 36px;
+                height: 100%;
+                @media (max-width: 992px){
+                    align-items: center;
+                    gap: 16px;
+                }
+                .AboutUsMain1-title{
+
+                    .title-set{
+                        text-align: center;
+                        font-size: 64px;
+                        color: #ffaad7;
+                        @media (max-width: 992px){
+                            font-size: 32px;
+                        }
+                    }
+                }
+
+                .AboutUsMain1-text-box{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    gap: 16px;
+                    max-width: 556px;
+                    @media (max-width: 992px){
+                        align-items: center;
+                    }
+                    .text-set{
+                        color: #ffffff;
+                        font-size: 24px;
+                        text-align: start;
+                        @media (max-width: 992px){
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            
+
+            .AboutUsMain1-img-box-set{
+                width: 100%;
+                height: 100%;
+                .AboutUsMain1-img-set{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

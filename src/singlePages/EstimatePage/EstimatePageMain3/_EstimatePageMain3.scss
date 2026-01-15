@@ -1,0 +1,240 @@
+//捲動高度設定
+#EstimatePageMain3 {
+  scroll-margin-top: 69px;
+}
+
+.EstimatePageMain3{
+    height: auto;
+    .EstimatePageMain3-bg{
+        min-height: calc(100dvh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+
+        .EstimatePageMain3-content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100dvh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0px;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 24px;
+
+            .EstimatePageMain3-title{
+                width: 100%;
+                text-align: flex-start;
+                @media (max-width: 992px){
+                    text-align: center;
+                }
+                .title-set{
+                    font-size: 32px;
+                    color: #ffffff;
+                }
+            }
+
+            .EstimatePageMain3-note-box{
+                width: auto;
+                background-color: #8b0018;
+                padding: 12px 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                border: 1px solid #ffaad7;
+                border-radius: 4px;
+                @media (max-width: 992px){
+                    margin: 0 auto;
+                    width: 100%;
+                }
+                .note-icon-set{
+                    color: #ffffff;
+                }
+
+                .note-text-box{
+
+                    .text-set{
+                        font-size: 16px;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .EstimatePageMain3-form-box{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                gap: 0px;
+                @media (max-width: 992px){
+                   flex-direction: column;
+                   gap: 32px;
+                }
+                .EstimatePageMain3-form-group-box{
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 48px;
+                    @media (max-width: 992px){
+                        width: 100%;
+                    }
+                    .EstimatePageMain3-group-box{
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: row;
+                        gap: 40px;
+                        @media (max-width: 992px){
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+                        .label-set{
+                            min-width: 120px;
+                            font-size: 24px;
+                            font-weight: 700;
+                            color: #ffffff;
+                        }
+
+                        .groupBody-box{
+                            position: relative;
+                            width: 100%;
+                            .input-set{
+                                width: 100%;
+                                background-color: transparent;
+                                font-size: 24px;
+                                font-weight: 700;
+                                padding: 26px 36px;
+                                color: #ffffff;
+                                border: 1px solid #ffffff;
+                                border-radius: 4px;
+                                @media (max-width: 992px){
+                                    font-size: 16px;
+                                    padding: 16px 24px;
+                                }
+                            }
+
+                            .groupBtn-box{
+
+                                .addBtn-set,.subBtn-set{
+                                    position: absolute;
+                                    z-index: 10;
+                                    left: 93%;
+                                    transform: translate(-50%,-50%);
+                                    border: none;
+                                    background-color: transparent;
+                                    @media (max-width: 992px){
+                                        left: 95%;
+                                    }
+                                    .addBtn-img-set,.subBtn-img-set{
+                                        max-width: 100%;
+                                        height: auto;
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                .addBtn-set{
+                                    top: 35%;
+                                    .addBtn-img-set{
+
+                                    }
+                                }
+
+                                .subBtn-set{
+                                    top: 65%;
+                                    .subBtn-img-set{
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .group-errorMessage{
+
+                    }
+                }
+                
+
+                .EstimatePageMain3-groupCheckBtn-box{
+                    width: 40%;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    @media (max-width: 992px){
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .groupCheckBtn-set{
+                        font-size: 24px;
+                        font-weight: 900;
+                        padding: 24px 88px;
+                        @media (max-width: 992px){
+                           padding: 12px 48px;
+                        }
+                    }
+                }
+            }
+
+            .EstimatePageMain3-next-btn{
+                position: relative;
+                width: 100%;
+                margin-top: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .EstimatePageMain3-next-btn-box{
+                    width: 40%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    left: auto;
+                    right: 5%;
+                    z-index: 20;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: 2px solid #8b0018;
+                    border-radius: 8px;
+                    cursor: default;
+                    @media (max-width: 992px){
+                        right: 0%;
+                    }
+                    .nextBtnTipText-set{
+                        width: auto;
+                        position: relative;
+                        z-index: 21;
+                        color: #ffffff;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

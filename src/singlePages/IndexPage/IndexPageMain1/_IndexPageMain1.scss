@@ -1,0 +1,166 @@
+//main1
+//最上方留出anvbar位置
+    .main1::before{
+        content:"";
+        display: block;
+        width: 100%;
+        height: 69px;
+    }
+//最上方留出anvbar位置
+
+//背景
+.main1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    background-color: #000000;
+    // 背景貼圖設定
+    .main1-bg{
+        position: absolute;
+        z-index: 0;
+        top: 69px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 69px);
+        background-color: transparent;
+        background-image:url("/images/Bg/main1-bg.png");
+        background-repeat:no-repeat;
+        background-position: center bottom;
+        background-size: 100% 100%;
+        @media (max-width: 992px){
+            background: linear-gradient(90deg, #000000 5%, #850017 100%);
+        }
+    }
+    // 背景貼圖設定
+
+    //角落貼圖
+    .main-corner-img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        display: none;
+        @media (max-width: 992px){
+            display: block;
+        }
+    }
+    //角落貼圖
+
+    //主要內容顯示區
+    .mainBox{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: calc(100dvh - 69px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // 限制空間顯示區
+        .containerBox{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: 992px){
+                flex-direction: column;
+                gap: 12px;
+            }
+            // 右方/上方內容
+            .main1-right-content{
+                width: 100%;
+                height: auto;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                row-gap: 24px;
+                @media (max-width: 992px){
+                    align-items: center;
+                    
+                }
+                //標題區塊
+                .main1-titleSet{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    gap: 12px;
+                    @media (max-width: 992px){
+                        align-items: center;
+                    }
+                    .titleTextSet{
+                        color: #fff;
+                        line-height: 1.2;
+                        font-weight: 900;
+                        font-size: 64px;
+                        @media (max-width: 1200px){
+                            font-size: 48px;
+                        }
+                        @media (max-width: 992px){
+                            font-size: 32px;
+                        }
+                    }
+                }
+                //標題區塊
+
+                //按鈕設定
+                .main1-btn1-set{
+                    padding: 24px 88px;
+                    font-size: 24px;
+                    font-weight: 900;
+                    @media (max-width: 1200px){
+                        padding: 12px 48px;
+                        font-weight: 700;
+                    }
+                }
+                //按鈕設定
+            }
+            // 右方/上方內容
+
+            // 左方/下方內容
+            .main1-left-content{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // 圖片區塊
+                .main1-img-box{
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 656 / 696;
+                    max-width: 100%;
+                    max-height: 100%;
+                    @media (max-width: 992px){
+                        width: 80%;
+                    }
+                    @media (max-width: 767.98px){
+                        width: 100%;
+                    }
+                    .main1-img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                // 圖片區塊
+            }
+            // 左方/下方內容
+        }
+        // 限制空間顯示區
+    }
+    //主要內容顯示區
+}
+//背景
+    
+
+

@@ -1,0 +1,74 @@
+.footer-container-box{  /*最外層*/
+    background-color: #000000;
+    border-top: 8px solid ;
+    border-image: linear-gradient(90deg, #F478FF, #F22082) 1;
+    padding-top: 60px;
+    padding-bottom: 64px;
+    @media (min-width: 1200px){  
+        padding-top: 92px;
+        padding-bottom: 100px;
+    }
+}
+.footer-logo{ /*標題logo*/
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12px;
+    @media (min-width: 1200px){  
+        flex-direction:row;
+        justify-content:start;
+    }
+}
+
+.text{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.card-box{
+    width: auto;
+    @media (min-width: 1200px){  
+        width: 415px;
+    }
+}
+.card-set{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 8px;
+    @media (min-width: 1200px){  
+        flex-direction:row;
+        justify-content: start;
+        gap:16px
+    }
+}
+.card-text{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    @media (min-width: 1200px){  
+        font-size: 24px;
+    }
+}
+
+
+.footer-text-set{
+    color:#ffffff;
+}
+
+.footer-footer-set{
+    width: 100%;
+    @media (min-width: 1200px){  
+        width: auto;
+    }
+}
+/*icon設定*/
+.card-img-box{
+    // cursor: pointer;
+}
+.footer-icon-box{
+    // cursor: pointer;
+}
+/*icon設定*/

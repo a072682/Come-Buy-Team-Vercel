@@ -1,0 +1,270 @@
+//捲動高度設定
+#EstimatePageMain2 {
+  scroll-margin-top: 69px;
+}
+
+.EstimatePageMain2{
+    height: auto;
+    .EstimatePageMain2-bg{
+        min-height: calc(100dvh - 69px);
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-2.png"), 
+            url("/images/Bg/main4/main4-bg-1.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            top left,
+            bottom right;
+        
+        @media (max-width: 992px){
+            background-image: 
+                none;
+        }
+
+        .EstimatePageMain2-content{
+
+            width: 100%;
+            padding: 72px 0px;
+            min-height: calc(100dvh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+
+            .EstimatePageMain2-title{
+                width: 100%;
+                text-align: flex-start;
+                @media (max-width: 992px){
+                    text-align: center;
+                }
+                .title-set{
+                    font-size: 32px;
+                    color: #ffffff;
+                }
+            }
+
+            .EstimatePageMain2-Nav-box{
+
+                .EstimatePageMain2-NavTabs-box{
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .EstimatePageMain2-tab-btn{
+                        position: relative;
+                        width: auto;
+                        height: auto;
+                        background-color: transparent;
+                        padding: 8px 32px;
+                        margin-bottom: -1px;
+                        margin-right: -1px;
+                        border:none;
+                        outline: none;
+                        color:#ffffff;
+                        clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%); /*calc(100% - 80px)靠上方點 100% 20px 靠下方點*/
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+                            border:none;
+                            background-color:#ffffff;
+                            clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%,0 0,2px  2px ,2px calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) calc(10px + 0.83px),calc(100% - 10px - 0.83px) 2px,2px 2px);/*calc(60px + 0.83px)靠下方點 calc(100% - 80px - 0.83px) 靠下方點 由於是繞回來所以會反過來寫*/
+                        }
+
+                        &.active{
+                            background-color:#e22288;
+
+                            &:before{
+                                content: "";
+                                background-color:#e22288;
+                            }
+                        }
+                    }
+                }
+
+                .EstimatePageMain2-NavContent-box{
+                    width: 100%;
+                    border: 3px solid #e22288;
+                    padding: 32px 180px;
+                    position: relative;
+                    @media (max-width: 1200px){
+                        padding: 32px 100px;
+                    }
+                    
+                    @media (max-width: 768px){
+                        padding: 20px 60px;
+                    }
+
+                    .EstimatePageMain2-Btn-box{
+
+                        .oEstimate-main2-swiper-prev-3D-Print,
+                        .oEstimate-main2-swiper-next-3D-Print,
+                        .oEstimate-main2-swiper-prev-Light-Print,
+                        .oEstimate-main2-swiper-next-Light-Print{
+                            border: none;
+                            padding: 0px;
+                            background-color: transparent;
+                            position: absolute;
+                            transform: translate(-50%,-50%);
+                            z-index: 10;
+                            top: 50%;
+                            left: 0%;
+                            width: 64px;
+                            @media (max-width: 768px){
+                                width: 32px;
+                            }
+                        }
+                        .oEstimate-main2-swiper-prev-3D-Print,
+                        .oEstimate-main2-swiper-prev-Light-Print{
+                            left: 4%;
+                            @media (max-width: 768px){
+                                left: 5%;
+                            }
+                        }
+                        .oEstimate-main2-swiper-next-3D-Print,
+                        .oEstimate-main2-swiper-next-Light-Print{
+                            left: 96%;
+                            @media (max-width: 768px){
+                                left: 95%;
+                            }
+                        }
+
+                        .prev-img-set,.next-img-set{
+                            max-width: 100%;
+                            height: auto;
+                            object-fit: cover;
+
+                        }
+                    }
+
+                    .EstimatePageMain2-swiper-box{
+                        width: 100%;
+
+                        .EstimatePageMain2-swiperItem-set{
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            background-color: #000000;
+                            padding: 8px;
+                            @media (max-width: 768px){
+                                max-width: 320px;
+                                margin: 0px auto;
+                            }
+                            &.active{
+                                padding: 4px;
+                                border: 4px solid #e22288;
+                                border-radius: 8px;
+                            }
+                            .swiperItem-img-box{
+                                width: 100%;
+                                
+                                .swiperItem-img-set{
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                    aspect-ratio: 320 / 280;
+                                    border-radius: 12px 12px 0 0;
+                                    @media (max-width: 768px){
+                                        aspect-ratio: 215 / 144;
+                                    }
+                                }
+                            }
+
+                            .swiperItem-body-box{
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 16px;
+                                background-color: #202020;
+                                border-radius: 0 0 12px 12px;
+                                @media (max-width: 576px){
+                                    padding: 16px 8px;
+                                }
+                                .body-text-box{
+
+                                    .text-set{
+                                        font-size: 24px;
+                                        font-weight: 500;
+                                        color: #ffffff;
+                                        @media (max-width: 1400px){
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+
+                                .body-btn-box{
+
+                                    .body-btn-set{
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .EstimatePageMain2-NextBtn-box{
+                position: relative;
+                width: 100%;
+                margin-top: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .pagination-img-box02{
+                    
+                    .pagination-img02-set{
+                        
+                       
+                    }
+                }
+
+                .EstimatePageMain2-next-btn-box{
+                    width: 40%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    left: auto;
+                    right: 5%;
+                    z-index: 20;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: 2px solid #8b0018;
+                    border-radius: 8px;
+                    cursor: default;
+                    @media (max-width: 992px){
+                        right: 0%;
+                    }
+                    .nextBtnTipText-set{
+                        width: auto;
+                        position: relative;
+                        z-index: 21;
+                        color: #ffffff;
+                        font-size: 16px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+

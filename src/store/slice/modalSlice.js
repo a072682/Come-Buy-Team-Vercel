@@ -17,7 +17,10 @@ const initialState = {
       OestimateModal:"OestimateModal",
       OrderModel:"OrderModel",
       OrderCheckModel:"OrderCheckModel",
+      OrderDetailModal:"OrderDetailModal",
       MaterialPageModal:"MaterialPageModal",
+      AboutUsModal:"AboutUsModal",
+      ImgCheckModal:"ImgCheckModal",
     };
 //#endregion
 
@@ -33,11 +36,11 @@ export const modalSlice = createSlice({
     close: (state) => {
         state.activeModal = null;
     },
-    // switchTo: (state, action) => {
-    //     const name = action.payload;
-    //     //如果不是字串就回null
-    //     state.activeModal = typeof name === "string" ? name : null;
-    // },
+    switchTo: (state, action) => {
+        const name = action.payload;
+        //如果不是字串就回null
+        state.activeModal = typeof name === "string" ? name : null;
+    },
   },
 });
 

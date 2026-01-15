@@ -1,0 +1,195 @@
+.QAPage::before{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 69px;
+}
+
+.QAPage{
+    min-height: 100vh;
+    .QAPage-bg{
+        width: 100%;
+        min-height: calc(100dvh - 69px - 156px);
+        @media (max-width: 992px){
+            min-height: calc(100dvh - 69px - 68px);
+        }
+        background-color: #000000;
+
+        .QAPage-title{
+            background:linear-gradient(90deg, #000000 0%, #60003A 50%, #000000 100%);
+            .title-set{
+                font-size: 64px;
+                color: #ffffff;
+                font-weight: 900;
+                padding: 40px 0;
+                text-align: center;
+                @media (max-width: 992px){
+                    font-size: 32px;
+                    padding: 16px 0;
+                }
+            }
+        }
+
+        .QAPage-content{
+            width: 100%;
+            min-height: calc(100dvh - 69px - 156px);
+            @media (max-width: 992px){
+                min-height: calc(100dvh - 69px - 68px);
+            }
+            
+            /* ─ 選單列（手機板） ─ */
+            .tab-mb-box{
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: none;
+                
+                @media (max-width: 991.98px) { 
+                    display: block;
+                    position: sticky;
+                    top: 68px;
+                    z-index: 100;
+                }
+
+                .tab-mb-btn-box{
+                    
+                    .tab-mb-btnR,.tab-mb-btnL{
+                        position: absolute;
+                        transform: translate(-50%,-50%);
+                        
+                        top:-50%;
+                        z-index: 10;
+                        color: #8b0018;
+                        background-color: #ffffff;
+                        border-radius: 50%;
+                        font-size: 24px;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: #8b0018;
+                            color: #ffffff;
+                        }
+                    }
+                    .tab-mb-btnR{
+                        left: 95%;
+                    }
+                    .tab-mb-btnL{
+                        left: 5%;
+                    }
+                }
+                .tab-mb-nav{
+                    width: 100%;
+                    .tab-mb-item{
+                        
+                        .tab-mb-link{
+                            font-size: 16px;
+                            color: #ffffff;
+                            font-weight: 700;
+                            padding: 16px 12px;
+                            text-align: center;
+                            background-color: #000000;
+                            &.active{
+                                background-color: #8b0018;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .QAPage-BodyContents{
+                /* ─ 外框容器：整個 Tabs 區域的排版/背景/間距 ─ */
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height:100%;
+                // background:linear-gradient(180deg, #000000 0%, #4f000e 100%);
+                background-color: #000000;
+                @media (max-width: 991.98px) { 
+                    flex-direction: column;
+                }
+                
+
+                /* ─ 選單列（你的 <Nav class="tab-box">） ─ */
+                .tab-box {
+                    width: 20%;
+                    background-color: #000000; 
+                    display: block;
+                    @media (max-width: 991.98px) { 
+                        display: none;
+                    }
+                    .tab-nav{
+                        position: sticky;
+                        top: 117px;
+                        z-index: 10;
+                        display: flex;
+                        flex-direction: column;
+                        height: auto;
+                        /* ─ 每個分頁項目（<Nav.Item class="tab-item">） ─ */
+                        .tab-item {
+                            list-style: none;          /* 保險：移除列表樣式 */
+
+                            /* ─ 分頁按鈕（<Nav.Link class="tab-link">） ─ */
+                            .tab-link {
+                                position: relative;        /* 方便做底線/微裝飾 */
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 24px 0px;        /* 觸控友善 */
+                                width: 100%;
+                                font-weight: 700;          /* 半粗體，易讀 */
+                                font-size: 24px;
+                                color: #ffffff;            /* 預設字色 */
+                                background: #000000;   /* 預設透明底 */
+                                border: 0;                 /* 清除預設邊線 */
+
+                                /* hover 狀態：滑過提示 */
+                                &:hover {
+                                    background: #8B0018;
+                                }
+
+                                /* focus 可及性：鍵盤導覽可見框 */
+                                &:focus-visible {
+                                    outline: 2px solid #0d6efd;
+                                    outline-offset: 2px;
+                                }
+
+                                /* active 狀態：目前選中的分頁 */
+                                &.active {
+                                    background: #8B0018;
+                                }
+
+                                /* disabled 狀態（若有需要） */
+                                &.disabled,&.is-disabled {
+                                    opacity: 0.5;
+                                    cursor: not-allowed;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /* ─ 內容區（React-Bootstrap 的 .tab-content） ─ */
+                .content-box {
+                    background-color: transparent;           /* 內容底色 */
+                    border-top: 0;               /* 與選單列貼齊，去掉上邊 */
+                    border-radius: 0 0 10px 10px;/* 下方圓角 */
+                    padding: 0px 0px;               /* 內容內距 */
+                    width: 100%;
+                    height: 100%;
+                    margin: 0px auto;
+                    @media (max-width: 991.98px) { 
+                        width: 100%;
+                    }
+                    /* 每個面板（.tab-pane） */
+                    .tab-pane {
+                    /* 顯示/隱藏的過渡可交給 Bootstrap 的 .fade/.show */
+                        &.fade {
+                            // transition: opacity 0.2s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

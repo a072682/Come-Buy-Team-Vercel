@@ -1,0 +1,124 @@
+.modalSet{
+    width: 100%;
+    min-height: 100dvh;
+    position: fixed;   /* 覆蓋視窗 */
+    inset: 0;          /* top/right/bottom/left: 0 */
+    z-index: 2000;     /* 確保比 header 等都高；> 1055 即可 */
+    display: flex;     /* 用 flex 置中內容（不依賴 bootstrap 的 class） */
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;             /* 🔥 遮罩本身可上下滾動 */
+    -webkit-overflow-scrolling: touch; /* iOS 慣性滾動 */
+    /* 手機上不要垂直置中，否則標題常被吃掉且無法往上捲 */
+    @media (max-width: 576px){
+        align-items: flex-start;    /* 🔥 靠上排列 */
+        padding: 12px;
+    }
+    &.register{
+        //定位效果
+        .modal-dialog{
+
+            // model整體元件
+            .modal-content{
+
+                //header設定
+                .modal-header{
+                    border: none;
+                    // header背景設定
+                    &.RegisterModalHeaderBgSet{
+                        background-color: #6E002C;
+
+                        //header關閉icon設定
+                        .RegisterModalBtnClose{
+                            display: block;
+                            margin-left: auto;
+                            border: none;
+                            background-color: transparent;
+                            // 關閉icon圖片設定
+                            .materialPageModalBtnCloseImgSet{
+                                width:48px; 
+                                height:48px;
+                            }
+                        }
+                    }
+                    
+                }
+
+                //model本體設定
+                .RegisterModal-body-set{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background: linear-gradient(90deg, #000000 0%,#60003A 100%);
+                    border-radius: 0 0 5px 5px;
+                    border:none;
+                    padding: 32px;
+                    gap: 12px;
+                    .title-set{
+                        font-size: 32px;
+                        color: #ffffff;
+                    }
+
+                    .form-set{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 24px;
+
+                        .emailGroup,.passWordGroup,.nameGroup{
+                            color: #ffffff;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: start;
+                            gap: 12px;
+                        }
+
+                        .errorMessage-box{
+
+                            .errorMessage{
+                                font-size: 16px;
+                                font-size: 900;
+                                color: #ff0000;
+                            }
+                        }
+
+                        .submitBtnGroup{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: end;
+                            gap: 12px;
+                            .formBtn-set{
+                                font-size: 16px;
+                                padding: 12px 0;
+                                width: 100%;
+                            }
+
+                            .registerPageBtn-box{
+
+                                .text-set{
+                                    font-size: 16px;
+                                    color: #ffffff;
+                                    font-weight: 400;
+                                }
+
+                                .registerPageBtn-set{
+                                    border: none;
+                                    background-color: transparent;
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    }
+    
+}

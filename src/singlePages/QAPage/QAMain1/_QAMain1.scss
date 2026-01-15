@@ -1,0 +1,66 @@
+
+
+.QAMain1{
+    
+    .QAMain1-bg{
+        background: linear-gradient(180deg, #000000 5%, #4F000E 100%);
+        .QAMain1-content{
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 72px 0;
+            @media (max-width: 992px){
+                gap: 32px;
+                padding: 64px 0;
+            }
+            .QAMain1-title{
+
+                .title-set{
+                    color: #ffaad7;
+                    font-size: 32px;
+                    font-weight: 900;
+                    text-align: center;
+                    @media (max-width: 992px){
+                        text-align: start;
+                    }
+                }
+            }
+
+            .QAMain1-contetn-box{
+
+                .sec-title-box{
+
+                    .title-set{
+                        text-align: start;
+                        color: #ffffff;
+                        font-size: 24px;
+                        @media (max-width: 1200px){
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .text-box{
+                    text-align: start;
+                    ol{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+                        gap: 16px;
+                        li{
+                            font-size: 24px;
+                            color: #ffffff;
+                        }
+
+                        .text-set{
+                            text-align: start;
+                            font-size: 16px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+
+
+
+
+.AboutUsMain3{
+    height: auto;
+    .AboutUsMain3-bg{
+        width: 100%;
+        min-height: calc(100dvh - 69px);
+
+        outline: 
+            none;
+        border: 
+            none;
+        background-color: 
+            #000000;
+        background-image: 
+            url("/images/Bg/main4/main4-bg-1.png"), 
+            url("/images/Bg/main4/main4-bg-2.png");
+        background-repeat: 
+            no-repeat, 
+            no-repeat;
+        background-position:
+            bottom right,
+            top left;
+        @media (max-width: 992px){
+            background-image: 
+            url("/images/Bg/main4/main4-bg-sm-1.png"), 
+            url("/images/Bg/main4/main4-bg-sm-2.png");
+        }
+
+        .AboutUsMain3-content{
+            padding: 72px 0;
+            width: 100%;
+            min-height: calc(100dvh - 69px);
+            @media (max-width: 992px){
+                padding: 36px 0 72px 0;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .AboutUsMain3-Introduce-box{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                gap: 72px;
+                height: 100%;
+                @media (max-width: 1200px){
+                    gap: 48px;
+                }
+                @media (max-width: 992px){
+                    gap: 24px;
+                }
+                .AboutUsMain3-title{
+                    width: 100%;
+                    max-width: 860px;
+                    text-align: start;
+                    @media (max-width: 992px){
+                        text-align: center;
+                    }
+                    .title-set{
+                        font-size: 64px;
+                        color: #ffaad7;
+                        @media (max-width: 992px){
+                            font-size: 32px;
+                        }
+                    }
+                }
+
+                .AboutUsMain3-text-box1,.AboutUsMain3-text-box2{
+                    max-width: 860px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    @media (max-width: 992px){
+                        align-items: center;
+                        gap: 0px;
+                    }
+                    .text-set{
+                        width: 100%;
+                        color: #ffffff;
+                        font-size: 24px;
+                        text-align: start;
+                        @media (max-width: 992px){
+                            text-align: center;
+                            font-size: 16px;
+                        }
+
+                        &.fw-set{
+                            font-weight: 900;
+                        }
+
+                        &.titleColor{
+                            color: #ffaad7;
+                        }
+                    }
+                }
+                .AboutUsMain3-text-box1{
+                    gap: 12px;
+                    @media (max-width: 992px){
+                        gap: 24px;
+                    }
+                }
+                .AboutUsMain3-text-box2{
+                    gap: 12px;
+                }
+            }
+            
+            .AboutUsMain3-img-box-set{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                @media (max-width: 992px){
+                    justify-content: center;
+                }
+                .picture{
+                    width: 100%;
+                    max-width: 280px;
+                    .AboutUsMain3-img-set{
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                        aspect-ratio: 330 / 340;
+                        border-radius: 12px;
+                    }
+                }
+                
+            }
+        }
+    }
+}

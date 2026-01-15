@@ -1,0 +1,34 @@
+
+
+.AddressInformation{
+
+    .formBox{
+
+        .address-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 24px;
+
+            .postalCodeGroup{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 12px;
+            }
+
+            .addressGroup{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 12px;
+            }
+            
+        }
+    } 
+}

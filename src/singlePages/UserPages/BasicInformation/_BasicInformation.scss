@@ -1,0 +1,256 @@
+
+
+.BasicInformation{
+
+    .formBox{
+
+        .form-content{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            .salutation{
+
+                .salutation-title{
+                    
+                }
+                .salutation-item-box{
+                    display: flex;
+                    gap: 48px;
+                    .salutation-item{
+
+                        /*隱藏預設的樣式*/
+                        input[type="radio"] {
+                            display: none; /* 隱藏 radio 按鈕 */
+                        }
+
+                        //點選 radio 時，顯示 ::before
+                        //:checked：選中狀態
+                        //+：相鄰兄弟選擇器（label 緊貼著 input）
+                        input[type="radio"]:checked + .custom-checkout-label::before {
+                            display: block;
+                        }
+
+                        //label本體
+                        .custom-checkout-label {
+                            color: #ffffff;
+                            padding: 3px 0 3px 44px;
+                            font-size: 24px;
+                            cursor: pointer;
+                            position: relative;
+
+                            /*自訂樣式的圓形 radio 樣式*/
+                            /* 基本的 ::before 和 ::after 設置 */
+                            &::after, &::before {
+                                content: "";
+                                top: 50%;
+                                position: absolute;
+                                border-radius: 50%;
+                            }
+
+                            &::after {
+                                left: 0px;
+                                transform: translateY(-50%);
+                                width: 30px;
+                                height: 30px;
+                                border: 3px solid #ffffff; /* 設定邊框顏色 */
+                            }
+
+                            &::before {
+                                display: none;
+                                left: 15px;
+                                transform: translate(-50%, -50%);
+                                width: 15px;
+                                height: 15px;
+                                background-color: #ffffff; /* 設定背景顏色 */
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+            .name{
+
+                .name-title{
+
+                }
+
+                .name-box{
+                    display: flex;
+                    gap: 32px;
+                    .name-item{
+                        width: 100%;
+                    }
+                }
+            }
+
+            .birthday{
+                .title-dropdown{
+
+                }
+                .birthday-box{
+                    width: 100%;
+                    display: flex;
+                    gap: 32px;
+                    .yearData,.mouthData,.dayData{
+                        width: 100%;
+                        .dropdown{
+
+                            .title-dropdown{
+
+                            }
+
+                            .dropdown-toggle{
+
+                            }
+
+                            .triple-dropdown-menu{
+                                width: 100%;
+                                position: absolute;
+                                padding: 0px;
+                                background-color: #000000;
+                                border-radius: 12px;
+                                .menu-column,.main-menu{
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 200px;
+                                    overflow: hidden;
+                                    overflow-y: auto;
+                                    .menu-btn{
+
+                                        color: #ffffff;
+                                        font-size: 24px;
+                                        padding: 20px 0;
+                                        text-align: center;
+                                        border-radius: 12px;
+                                        &:hover{
+                                            background-color: #8B0018;
+                                        }
+                                    }
+
+                                    /* Chrome/Edge/Safari */
+                                    //寬度
+                                    &::-webkit-scrollbar {
+                                        width: 8px;
+                                    }
+                                    //背景色
+                                    &::-webkit-scrollbar-track {
+                                        background: #383838;
+                                        border-radius: 10px;
+                                    }
+                                    //
+                                    &::-webkit-scrollbar-thumb {
+                                        background-color: #8B0018;
+                                        border-radius: 10px;
+                                        border: 2px solid #8B0018;
+                                    }
+                                    &::-webkit-scrollbar-thumb:hover {
+                                        background-color: #8B0018;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .subscribe{
+                .subscribe-item{
+
+                    /*隱藏預設的樣式*/
+                    input[type="checkbox"] {
+                        display: none; /* 隱藏 radio 按鈕 */
+                    }
+
+                    //點選 radio 時，顯示 ::before
+                    //:checked：選中狀態
+                    //+：相鄰兄弟選擇器（label 緊貼著 input）
+                    input[type="checkbox"]:checked + .custom-checkout-label::before {
+                        display: block;
+                    }
+
+                    //label本體
+                    .custom-checkout-label {
+                        color: #ffffff;
+                        padding: 3px 0 3px 44px;
+                        font-size: 24px;
+                        cursor: pointer;
+                        position: relative;
+
+                        /*自訂樣式的圓形 radio 樣式*/
+                        /* 基本的 ::before 和 ::after 設置 */
+                        &::after, &::before {
+                            content: "";
+                            top: 50%;
+                            position: absolute;
+                            border-radius: 12%;
+                        }
+
+                        &::after {
+                            left: 0px;
+                            transform: translateY(-50%);
+                            width: 30px;
+                            height: 30px;
+                            border: 3px solid #ffffff; /* 設定邊框顏色 */
+                        }
+
+                        &::before {
+                            display: none;
+                            left: 15px;
+                            transform: translate(-50%, -50%);
+                            width: 15px;
+                            height: 15px;
+                            background-color: #ffffff; /* 設定背景顏色 */
+                        }
+                    }
+                }
+            }
+
+            .img{
+                display: flex;
+                flex-direction: column;
+                row-gap: 24px;
+                
+                .imgData{
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    background-color: #8B0018;
+                    border-radius: 12px;
+                    // border: 1px solid #00b1b1;
+
+                    &.textVer{
+                        font-size: 64px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #ffffff;
+                    }
+                }
+                .img-input{
+                    display: none;
+                    
+                }
+                .imgBtn{
+                    width: fit-content;
+                    padding: 12px;
+                    background-color: #ffffff;
+                    border: none;
+                    border-radius: 8px;
+                    color: #60003A;
+                    font-size: 24px;
+                    
+                }
+            }
+            
+            .formBtn{
+                
+            }
+        }
+
+    }
+    
+}
+
+
+

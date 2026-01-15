@@ -1,0 +1,182 @@
+
+
+//捲動高度設定
+#news {
+  scroll-margin-top: 69px;
+}
+
+//main5背景
+.main5{
+    outline: none;
+    border: none;
+    background-color:#000000;
+    position: relative;
+}
+//main5背景
+
+.main5{
+    width: 100%;
+    min-height: calc(100vh - 69px);
+    .main5-content{
+        width: 100%;
+        padding: 0px;
+        min-height: calc(100vh - 69px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 36px;
+        
+        @media (max-width: 992px){
+            padding: 64px 0;
+        }
+        .main5-title{
+
+            .main5-title-set{
+                font-size: 48px;
+                font-weight: 900;
+                color: #ffffff;
+                text-align: center;
+                @media (max-width: 992px){
+                    font-size: 32px;
+                }
+            }
+        }
+
+        .swiper-box{
+            width: 80%;
+            height: 100%;
+            margin: 0px auto;
+            @media (max-width: 992px){
+                width: 80%;
+            }
+            @media (max-width: 768px){
+                width: 80%;
+            }
+            
+            .main5-card{ //卡片本體
+                margin: 0 auto;
+                border: 8px solid #8B0018;
+                width: 100%;
+                height: auto;
+                @media (max-width: 1200px){
+                    border: 4px solid #8B0018;
+                }
+                
+
+                .main5-card-img-box{ 
+
+                    // max-width: 396px;
+                    width: 100%;
+                    height: auto;
+                    @media (max-width: 1200px){
+                        // max-width: 352px;
+                    }
+                    .img-set{
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+
+                .main5-card-text-box{
+                    min-height: 300px;
+                    height: auto;
+                    padding: 12px;
+                    border-top: 8px solid;
+                    border-image: linear-gradient(90deg, #F1B1FF, #C10877) 1;
+                    background-color: #6E002C;
+                    @media (max-width: 992px){
+                        border-top: 4px solid;
+                    }
+                    @media (max-width: 768px){
+                        min-height: 250px;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+
+                    .main5CardBtn-set{
+                        width:fit-content;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: auto auto 0 auto;
+                    }
+                }
+            }
+
+            .swiper-btn-box{
+
+                &:hover{
+
+                    .swiper-next-R-btn,.swiper-next-L-btn{
+                        // hover 時停止
+                        animation-play-state: paused; 
+                    }
+                }
+
+                //swiper左右按鈕設定
+                .swiper-next-R-btn,.swiper-next-L-btn{
+                    position: absolute;
+                    display: none;
+                    top: 50%;
+                    z-index: 500;
+                    filter: drop-shadow(0 0 10px #E22288) drop-shadow(0 0 40px #E22288);
+                    
+                    &:hover{
+                        filter: drop-shadow(0 0 10px #E22288) drop-shadow(0 0 40px #E22288) drop-shadow(0 0 40px #E22288);
+                    }
+
+                    
+                }
+                .swiper-next-R-btn{
+                    display: block;
+                    right: 24px;
+                    // 預設做左右擺動動畫
+                    animation: moveRightSide 1.5s ease-in-out infinite;
+                    @media (max-width: 576px){
+                        right: 0px;
+                    }
+
+                    //左右移動的 keyframes
+                    @keyframes moveRightSide {
+                        0%   { transform: translateX(0); }
+                        50%  { transform: translateX(6px); }   // 向右移動
+                        100% { transform: translateX(0); }
+                    }
+                }
+                .swiper-next-L-btn{
+                    display: block;
+                    left: 24px;
+                    // 預設做左右擺動動畫
+                    animation: moveLeftSide 1.5s ease-in-out infinite;
+                    @media (max-width: 576px){
+                        left: 0px;
+                    }
+
+                    //左右移動的 keyframes
+                    @keyframes moveLeftSide {
+                        0%   { transform: translateX(0); }
+                        50%  { transform: translateX(-6px); }   // 向左移動
+                        100% { transform: translateX(0); }
+                    }
+                }
+                //swiper左右按鈕設定
+            }
+        }
+
+        .main5-checkBtn-box{
+
+            .mian5-checkBtn-Set{
+                font-size: 24px;
+                padding: 24px 88px;
+                @media (max-width: 992px){
+                    padding: 12px 48px;
+                }
+            }
+        }
+    }
+}
+

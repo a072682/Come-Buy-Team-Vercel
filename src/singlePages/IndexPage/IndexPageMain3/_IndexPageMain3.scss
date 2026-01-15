@@ -1,0 +1,116 @@
+//main3背景
+.main3{
+    width: 100%;
+    min-height: calc(100vh - 69px);
+    background-color: #000000;
+    background-attachment:scroll;
+    background-image: 
+        url("/images/Bg/main3/main3-bg-top.png"), 
+        url("/images/Bg/main3/main3-bg-bottom.png");
+    background-position:
+        top left,
+        bottom right;
+    background-repeat:
+        repeat-x,
+        no-repeat;
+    @media (max-width: 992px){
+        background-image:url("/images/Bg/main3/main3-bg-top.png");
+        background-repeat:repeat-x;
+        background-position:top;
+    }
+
+    .main3-content{
+        width: 100%;
+        padding: 144px 0;
+        min-height: calc(100vh - 69px);
+        @media (max-width: 992px){
+            padding: 64px 0;
+        }
+        .main3-title{
+            margin-bottom: 48px;
+            .main3-title-set{
+                color: #ffffff;
+                font-size: 48px;
+                text-align: center;
+                @media (max-width: 992px){
+                    font-size: 32px;
+                }
+            }
+        }
+
+        .main3-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 112px;
+            @media (max-width: 992px){ 
+                row-gap: 64px;
+            }
+            .main3-card-item{
+                
+                .main3-img-box{
+                    max-width: 512px;
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    aspect-ratio: 456 / 350; 
+                    @media (max-width: 992px){
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .main3-img-set{
+                        width: 100%;
+                        height: auto;
+                        box-shadow: 0 0 10px #8B0018, 0 0 40px #8B0018;
+                    }
+                }
+
+                .main3-text-box{
+                    
+                    .main3-text-set{
+                        
+                        color:#ffffff;
+                        font-weight:700;
+                        line-height: 1.2;
+                        font-size: 32px;
+                        @media (max-width: 992px){
+                            font-size: 24px;
+                        }
+
+                    }
+
+                    &::after{
+                        content: "";
+                        display:block;
+                        padding-top: 28px;
+                        border-bottom: 4px solid;
+                        border-image: linear-gradient(to right, #F1B1FF, #C10877) 1;
+                        @media (max-width: 992px){
+                            padding-top: 20px;
+                        }
+                    }
+                }
+
+                .main3-checkBtn-box{
+                    margin-top: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .mian3-checkBtn-Set{
+                        font-size: 24px;
+                        padding: 24px 88px;
+                        @media (max-width: 992px){
+                            padding: 12px 48px;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+

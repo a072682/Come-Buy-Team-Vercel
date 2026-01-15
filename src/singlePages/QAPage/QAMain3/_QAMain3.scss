@@ -1,0 +1,100 @@
+
+.QAMain3{
+
+    .QAMain3-bg{
+        
+        .QAMain3-content{
+            
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            padding: 72px 0;
+            @media (max-width: 992px){
+                gap: 32px;
+                padding: 64px 0;
+            }
+
+            .QAMain3-title{
+
+                .title-set{
+                    color: #ffaad7;
+                    font-size: 32px;
+                    font-weight: 900;
+                    text-align: center;
+                    @media (max-width: 992px){
+                        text-align: start;
+                    }
+                }
+            }
+
+            .QAMain3-content-box{
+
+                display: flex;
+                flex-direction: column;
+                gap: 56px;
+
+                @media (max-width: 992px){
+                    gap: 16px;
+                }
+               
+                .QAMain3-item-set{
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    .QAMain3-item-img-box{
+                        padding: 12px;
+                        .QAMain3-item-img{
+                            width: 100px;
+                            height: 100px;
+                            object-fit: cover;
+                            @media (max-width: 992px){
+                                width: 44px;
+                                height: 44px;
+                            }
+                        }
+                    }
+
+                    .QAMain3-content-box{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        padding: 22px 12px;
+                        @media (max-width: 992px){
+                            padding: 12px 0;
+                            gap: 4px;
+                        }
+                        .QAMain3-item-title-box{
+
+                            .QAMain3-item-title{
+                                font-size: 32px;
+                                font-weight: 700;
+                                color: #ffaad7;
+                                @media (max-width: 992px){
+                                    font-size: 24px;
+                                }
+                            }
+                        }
+
+                        .QAMain3-item-text-box{
+
+                            .QAMain3-item-text{
+                                font-size: 16px;
+                                font-size: 500;
+                                color: #ffffff;
+                                @media (max-width: 992px){
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+
+
+
+

@@ -1,0 +1,80 @@
+.modalSet{
+    width: 100%;
+    min-height: 100dvh;
+    position: fixed;   /* 覆蓋視窗 */
+    inset: 0;          /* top/right/bottom/left: 0 */
+    z-index: 2010;     /* 確保比 header 等都高；> 1055 即可 */
+    display: flex;     /* 用 flex 置中內容（不依賴 bootstrap 的 class） */
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;             /* 🔥 遮罩本身可上下滾動 */
+    -webkit-overflow-scrolling: touch; /* iOS 慣性滾動 */
+    /* 手機上不要垂直置中，否則標題常被吃掉且無法往上捲 */
+    @media (max-width: 576px){
+        align-items: flex-start;    /* 🔥 靠上排列 */
+        padding: 12px;
+    }
+    &.imgCheckModal{
+        //定位效果
+        .modal-dialog{
+            width: 40%;
+            // model整體元件
+            .modal-content{
+
+                //本體設定
+                .modal-body{
+                    position: relative;
+                    border: none;
+                    border-radius: 8px;
+                    
+                    // 本體背景設定
+                    &.orderCheckModelBodyBgSet{
+                        background-color: #6E002C;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .text-set{
+                        color: #ffffff;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 900;
+                        white-space: pre-line;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 16px;
+                    }
+
+                    //header關閉icon設定
+                    .orderCheckModelBtnClose{
+                        position: absolute;
+                        top: 50%;
+                        left: auto;
+                        right: 3%;
+                        z-index: 20;
+                        transform: translateY(-50%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        background-color: transparent;
+                        // 關閉icon圖片設定
+                        .materialPageModalBtnCloseImgSet{
+                            width:48px; 
+                            height:48px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }  
+
+        //model本體背景
+        .orderCheckModel-body-set{
+            
+        }
+    }    
+}
+

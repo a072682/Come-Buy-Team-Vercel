@@ -1,0 +1,64 @@
+
+
+.dropdown{
+
+    .Faq-dropdown-toggle{
+
+        .FaqItem-set{
+            font-size: 16px;
+            padding: 12px 8px 9px 8px;
+            border-bottom:3px solid transparent;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover{
+                border-bottom:3px solid #E22288;
+                .material-symbols-outlined{
+                    color:#E22288;
+                }
+            }
+
+            &.active{
+                border-bottom:3px solid #E22288;
+                .material-symbols-outlined{
+                    color:#E22288;
+                    transform:rotate(-180deg);
+                    transition: 0.2s;
+                }
+            }
+
+        }
+    }
+    .FaqDropdown-list-wrapper{
+
+        /* 下拉視窗位置 */
+        &.show{
+            width: 250px;
+            top:125%;
+            left: 50%;
+            transform: translate(-50%);
+            padding: 0px;
+            background-color: #000000;
+            border:3px solid #E22288;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 下拉視窗位置 */
+
+        .dropdown-item-set{
+            color: #ffffff;
+            background-color: #000000;
+            font-size: 16px;
+            width: 100%;
+            padding: 24px 0px;
+            text-align: center;           
+            &:hover{
+                background-color: #E22288;
+            }
+        }
+    }
+}
