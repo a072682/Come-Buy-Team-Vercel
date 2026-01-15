@@ -4,7 +4,7 @@ import { linkTest } from "@/store/slice/testSlice";
 import { open,MODALS } from "@/store/slice/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import News from "./News/News";
-import Faq from "./FAQ/FAQ";
+import Faq from "./Faq/Faq";
 import './_Header.scss';
 import UserDropdown from "./UserDropdown/UserDropdown";
 import OffcanvasPage from "./OffcanvasPage/OffcanvasPage";
